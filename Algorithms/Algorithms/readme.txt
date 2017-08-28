@@ -1,0 +1,1 @@
+﻿This project is my attempt to learn many of the fascinating Algorithms available to the world of computer scientists. I am using the book "The Algorithm Design Manul" by Steven S. Skiena, Second Edition. The Winforms component has been retired in favor of learning WPF.
