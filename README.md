@@ -22,5 +22,5 @@ A repository for learning better programming patterns and techniques.
         </td>
         <td>
         </td>
-    </tr>
+    </tr> 
 <table>
