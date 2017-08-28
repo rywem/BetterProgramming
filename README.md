@@ -22,4 +22,12 @@ A repository for learning better programming patterns and techniques.
         <td>Crypto</td>
         <td>A directory for code relating to crypto currency.</td>
     </tr>
+    <tr>
+        <td>Xamarin</td>
+        <td>A directory for code relating to cross-platform development.</td>
+    </tr>
+    <tr>
+        <td>DotNet</td>
+        <td>A directory for code relating to misc .NET things</td>
+    </tr>
 <table>
