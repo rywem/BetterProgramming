@@ -29,11 +29,12 @@ PredictiveModels
 
 <h2>Packages</h2>
 <dl>
-<dt><h3>pydotplus</h3></dt>
-<dd><li>!pip install numpy</li></dd>
-<dd><li>!pip install scikit_learn</li></dd>
-<dd><li>!pip install pandas</li></dd>
-<dd><li>!pip install statsmodels</li></dd>
-<dd><li>!pip install xlrd</li></dd>
-<dd><li>!pip install pydotplus</li></dd>
+<dt><h3>Python Packages:</h3></dt>
+<dd><li>pip install numpy</li></dd>
+<dd><li>pip install scikit_learn</li></dd>
+<dd><li>pip install pandas</li></dd>
+<dd><li>pip install statsmodels</li></dd>
+<dd><li>pip install xlrd</li></dd>
+<dd><li>pip install pydotplus</li></dd>
+<dd><li>pip install matplotlib</li></dd>
 </dl>
