@@ -34,4 +34,8 @@ A repository for learning better programming patterns and techniques.
         <td>DesignPatterns</td>
         <td>A project directory for learning various design patterns available in computer science. </td>
     </tr>
+    <tr>
+        <td>MontyHall</td>
+        <td>A simulation to calculate if Mary Vos Savant's answer to the Monty Hall problem stands true when calculated by a computer </td>
+    </tr>
 <table>
