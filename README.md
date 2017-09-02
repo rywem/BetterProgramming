@@ -30,4 +30,8 @@ A repository for learning better programming patterns and techniques.
         <td>DotNet</td>
         <td>A directory for code relating to misc .NET things</td>
     </tr>
+    <tr>
+        <td>DesignPatterns</td>
+        <td>A project directory for learning various design patterns available in computer science. </td>
+    </tr>
 <table>
