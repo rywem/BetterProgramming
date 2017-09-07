@@ -84,6 +84,7 @@
     <Compile Include="CatalogTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Controllers\HomeControllerTest.cs" />
+    <Compile Include="TestCatalogRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="App.config" />

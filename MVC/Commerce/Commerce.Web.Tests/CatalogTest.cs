@@ -1,4 +1,5 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using Commerce.Data.DataAccess;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -28,6 +29,12 @@ namespace Commerce.Web.Tests
             product.ListPrice = 100;
             product.DiscountPercent = 40;
             Assert.AreEqual(product.DiscountPrice, 60);
+        }
+        [TestMethod]
+        public void CatalogRepository_Repository_IsNotNull()
+        {
+            ICatalogRepository rep = new TestCatalogRepository();
+            Assert.IsNotNull(rep.GetCategories());
         }
 
         #endregion
