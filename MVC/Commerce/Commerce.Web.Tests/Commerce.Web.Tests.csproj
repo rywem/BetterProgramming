@@ -81,6 +81,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CatalogTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Controllers\HomeControllerTest.cs" />
   </ItemGroup>
@@ -91,6 +92,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Commerce.Data\Commerce.Data.csproj">
+      <Project>{22584f8d-c210-4dac-96f5-16ca59211b5e}</Project>
+      <Name>Commerce.Data</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Commerce.Web\Commerce.Web.csproj">
       <Project>{1C5E6751-7B24-47AE-8C40-5D0E9A80022F}</Project>
       <Name>Commerce.Web</Name>
