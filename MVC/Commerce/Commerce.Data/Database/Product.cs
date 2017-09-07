@@ -16,7 +16,19 @@ namespace Commerce.Data.Database
         [StringLength(50)]
         public string Description { get; set; }
 
-        public decimal? DiscountAmount { get; set; }
+        public decimal? DiscountAmount
+        {
+            get
+            {
+                decimal result = 0;
+                if (this.DiscountPercent > 0 && this.ListPrice > 0)
+                {
+                    decimal discountRate = this.DiscountPercent.Value * 0.01m;
+                    result = this.ListPrice.Value * discountRate;
+                }
+                return result;
+            }
+        }
 
         public decimal? DiscountPercent { get; set; }
 
@@ -30,5 +42,16 @@ namespace Commerce.Data.Database
         public string SummaryDescription { get; set; }
 
         public string ThumbnailFileName { get; set; }
+        public decimal DiscountPrice
+        {
+            get
+            {
+                if (this.DiscountPercent > 0 && this.ListPrice > 0)
+                {
+                    return this.ListPrice.Value - DiscountAmount.Value;
+                }
+                return 0;
+            }
+        }
     }
 }

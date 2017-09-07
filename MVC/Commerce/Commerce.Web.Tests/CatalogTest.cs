@@ -27,7 +27,7 @@ namespace Commerce.Web.Tests
             Commerce.Data.Database.Product product = new Data.Database.Product();
             product.ListPrice = 100;
             product.DiscountPercent = 40;
-            Assert.AreEqual(product.DiscountAmount, 60);
+            Assert.AreEqual(product.DiscountPrice, 60);
         }
 
         #endregion
