@@ -4,7 +4,7 @@ A directory for learning and improving use with MVC pattern
 <table>
     <tr>
         <td>PlaygroundMVC</td>
-        <td>A repository for stashing basic learning based upon this <a href="https://www.udemy.com/the-complete-aspnet-mvc-5-course/learn/v4/overview"> Udemy tutorial series by Mosh Hamadni </a>. (Note: I've completed this tutorial in the past, so I did not re-do the entire project on this play-through.)</td>
+        <td>A repository for stashing basic learning based upon this <a href="https://www.udemy.com/the-complete-aspnet-mvc-5-course/learn/v4/overview"> Udemy tutorial series by Mosh Hamedani</a>. <small>(Note: I've completed this tutorial in the past, so I did not re-do the entire project on this play-through.)</small></td>
     </tr>    
     <tr>
         <td>Commerce</td>
