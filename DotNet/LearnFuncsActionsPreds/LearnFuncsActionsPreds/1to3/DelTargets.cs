@@ -11,7 +11,7 @@ namespace LearnFuncsActionsPreds
 
     /// <summary>
     /// Video tutorials on this class:
-    /// 2: https://www.youtube.com/watch?v=N9XmnG91G5g
+    /// 2. https://www.youtube.com/watch?v=N9XmnG91G5g    
     /// </summary>
     public class DelTargets
     {
