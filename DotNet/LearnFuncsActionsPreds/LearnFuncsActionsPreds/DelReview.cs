@@ -18,6 +18,12 @@ namespace LearnFuncsActionsPreds
             Foo();
             MeDelegate del = new MeDelegate(Foo); // takes a method that returns void, 
             del(); // del() is equivalent too:  del.Invoke();
+            InvokeTheDelegat(del);
+        }
+
+        void InvokeTheDelegat(MeDelegate delParam)
+        {
+            delParam();
         }
         void Foo()
         {
