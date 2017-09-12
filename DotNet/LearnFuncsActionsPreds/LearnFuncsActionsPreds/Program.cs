@@ -13,7 +13,22 @@ namespace LearnFuncsActionsPreds
     {
         static void Main(string[] args)
         {
-            DelReview review = new DelReview();
+            int currentTutorial = 2;
+
+            switch (currentTutorial)
+            {
+                case 1:
+                    DelReview review = new DelReview();
+                    review.Run();
+                    break;
+                case 2:
+                    DelTargets target = new DelTargets();
+                    target.Run();
+                    break;
+                default:
+                        break;
+            }
+        Console.ReadLine();
         }
 
         
