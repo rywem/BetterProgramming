@@ -13,7 +13,7 @@ namespace LearnFuncsActionsPreds
     {
         static void Main(string[] args)
         {
-            int currentTutorial = 3;
+            int currentTutorial = 4;
 
             switch (currentTutorial)
             {
@@ -28,6 +28,10 @@ namespace LearnFuncsActionsPreds
                 case 3:
                     DelWhy why = new DelWhy();
                     why.Run();
+                    break;
+                case 4:
+                    LambdaReview lamb = new LambdaReview();
+                    lamb.Run();
                     break;
                 default:
                         break;

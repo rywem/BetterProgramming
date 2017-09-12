@@ -45,6 +45,7 @@
     <Compile Include="1to3\DelReview.cs" />
     <Compile Include="1to3\DelTargets.cs" />
     <Compile Include="1to3\DelWhy.cs" />
+    <Compile Include="1to3\LambdaReview.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
