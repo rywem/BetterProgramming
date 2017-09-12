@@ -6,10 +6,16 @@ using System.Threading.Tasks;
 
 namespace LearnFuncsActionsPreds
 {
+
+    //class MeDelegate { } 
+
     class Program
     {
         static void Main(string[] args)
         {
+            DelReview review = new DelReview();
         }
+
+        
     }
 }

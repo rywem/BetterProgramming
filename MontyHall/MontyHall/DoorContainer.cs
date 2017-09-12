@@ -31,7 +31,6 @@ namespace MontyHall
             Random rand = new Random();
 
             int firstPosition = rand.Next() % 3; // 8 / 2 = 4 r0, 8/3 = 2, 8 % 2  = 2 
-
             this.Doors.Add(StartDoors[firstPosition]);
             StartDoors.RemoveAt(firstPosition);
 
@@ -45,6 +44,7 @@ namespace MontyHall
             StartDoors[1].DoorNumber = 2;
             StartDoors[2].DoorNumber = 3;
         }
+        
 
         public void SelectDoorNumber(int selectedDoor)
         {

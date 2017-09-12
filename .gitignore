@@ -288,3 +288,4 @@ __pycache__/
 *.xsd.cs
 DataScience.zip
 DataScience-Python3
+/MVC/Commerce/Commerce.Data/App.config
