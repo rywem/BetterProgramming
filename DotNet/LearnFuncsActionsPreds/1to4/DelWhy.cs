@@ -37,7 +37,7 @@ namespace LearnFuncsActionsPreds
         static bool GreaterThanThirteen(int n) { return n > 13; }
         public void Run()
         {
-            IEnumerable<int> result = GetNumbers(new[] { 5, 3, 7, 3, 8, 4, 12, 9, 45, 1, 0, 12, 78, }, Great);
+            IEnumerable<int> result = GetNumbers(new[] { 5, 3, 7, 3, 8, 4, 12, 9, 45, 1, 0, 12, 78, }, x => x > 5);
 
             foreach (var item in result)
             {

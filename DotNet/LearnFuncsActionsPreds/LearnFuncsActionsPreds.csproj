@@ -42,10 +42,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="1to3\DelReview.cs" />
-    <Compile Include="1to3\DelTargets.cs" />
-    <Compile Include="1to3\DelWhy.cs" />
-    <Compile Include="1to3\LambdaReview.cs" />
+    <Compile Include="1to4\DelReview.cs" />
+    <Compile Include="1to4\DelTargets.cs" />
+    <Compile Include="1to4\DelWhy.cs" />
+    <Compile Include="1to4\LambdaReview.cs" />
+    <Compile Include="5to10\AnonMethodsVsLambdas.cs" />
+    <Compile Include="5to10\DelChaining.cs" />
+    <Compile Include="5to10\FuncsActs.cs" />
+    <Compile Include="5to10\MulticastDele.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
