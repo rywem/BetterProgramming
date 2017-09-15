@@ -37,7 +37,19 @@ namespace Learn_PLINQ_Async_Tasks.PLINQ
                 .AsOrdered() //.AsOrdered() preserves the order of the original items
                 .WithExecutionMode(ParallelExecutionMode.ForceParallelism)  //the compiler will ultimately decide to use linq or parallel linq. WithExecutionMode will force parallelism                
                 .Select(word => new string(word.Reverse().ToArray()));
-            Console.WriteLine(string.Join(" ", words));
+            Console.WriteLine(string.Join(" ", words));          
+            
+            //Can "sometimes" be parallelized in 4.0, always in 4.5:
+            //concat 
+            //first
+            //firstordefault
+            //last
+            //lastordefault
+            //skip
+            //skipwhile
+            //take
+            //takewhile
+            //zip
         }
     }
 }
