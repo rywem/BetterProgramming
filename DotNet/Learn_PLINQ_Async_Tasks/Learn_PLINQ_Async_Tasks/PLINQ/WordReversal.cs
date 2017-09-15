@@ -34,6 +34,8 @@ namespace Learn_PLINQ_Async_Tasks.PLINQ
             string sentence = "the quick brown fox jumped over the lazy dog";
             var words = sentence.Split()
                 .AsParallel() //Now the expression is a parallel linq expression
+                .AsOrdered() //.AsOrdered() preserves the order of the original items
+                .WithExecutionMode(ParallelExecutionMode.ForceParallelism)  //the compiler will ultimately decide to use linq or parallel linq. WithExecutionMode will force parallelism                
                 .Select(word => new string(word.Reverse().ToArray()));
             Console.WriteLine(string.Join(" ", words));
         }
