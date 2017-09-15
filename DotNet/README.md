@@ -14,7 +14,7 @@ A repository for learning and improving with the capabilities of .NET
         <td>Learn_PLINQ_Async_Tasks</td>
         <td>A project to improve skills relating to asynchronous, parallel processing, and PLINQ. This is based on the Udemy course <a href="https://www.udemy.com/write-asynchronous-csharp-code-with-task-parallel-library-and-plinq/">Write Asynchronous C# Code With Tasks and PLINQ</a> by <a href="https://www.udemy.com/user/markfarragher/">Mark Farragher.</a> </td>
     </tr>    
-    <tr colspan="2">
-        <td><i>I highly recommend taking these course, the code alone will not sufficiently describe these .NET features.</i></td>
+    <tr>
+        <td  colspan="2"><i>I highly recommend taking these course, the code alone will not sufficiently describe these .NET features.</i></td>
     </tr>        
     </table>
