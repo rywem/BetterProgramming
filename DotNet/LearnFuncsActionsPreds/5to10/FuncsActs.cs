@@ -18,8 +18,7 @@ namespace LearnFuncsActionsPreds
         {
             Func<int> d = ReturnFive;
             d += ReturnTen;
-            d += ReturnThree;
-            //int value = d();
+            d += ReturnThree;            
 
             Func<int, bool> f = TakeAnIntReturnBool;
             f(3);

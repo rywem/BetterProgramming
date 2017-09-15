@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{CA0E1D92-6000-4F2C-9DEB-D67CDACC48A0}</ProjectGuid>
+    <ProjectGuid>{F81A2D81-E264-43F3-A320-BF657A5841A4}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>LearnFuncsActionsPreds</RootNamespace>
-    <AssemblyName>LearnFuncsActionsPreds</AssemblyName>
+    <RootNamespace>Learn_PLINQ_Async_Tasks</RootNamespace>
+    <AssemblyName>Learn_PLINQ_Async_Tasks</AssemblyName>
     <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -42,15 +42,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="1to4\DelReview.cs" />
-    <Compile Include="1to4\DelTargets.cs" />
-    <Compile Include="1to4\DelWhy.cs" />
-    <Compile Include="1to4\LambdaReview.cs" />
-    <Compile Include="5to10\AnonMethodsVsLambdas.cs" />
-    <Compile Include="5to10\DelChainException.cs" />
-    <Compile Include="5to10\DelChaining.cs" />
-    <Compile Include="5to10\FuncsActs.cs" />
-    <Compile Include="5to10\MulticastDele.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

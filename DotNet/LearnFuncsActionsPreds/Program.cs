@@ -13,7 +13,7 @@ namespace LearnFuncsActionsPreds
     {
         static void Main(string[] args)
         {
-            int currentTutorial = 6;
+            int currentTutorial = 9;
 
             switch (currentTutorial)
             {
@@ -46,9 +46,13 @@ namespace LearnFuncsActionsPreds
                     am.Run();
                     break;
                 case 8:
+                    DelChainException exc = new DelChainException();
+                    exc.Run();
+                    break;
+                case 9:
                     AnonMethodsVsLambdas ams = new AnonMethodsVsLambdas();
                     ams.Run();
-                    break;
+                    break;                    
                 default:
                         break;
             }
