@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Learn_PLINQ_Async_Tasks.PLINQ;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,7 +11,10 @@ namespace Learn_PLINQ_Async_Tasks
     {
         static void Main(string[] args)
         {
-            //Notes on Asynchronous libraries
+            WordReversal reverse = new WordReversal();
+            reverse.Run();
+
+            Console.ReadLine();
         }
 
     }
