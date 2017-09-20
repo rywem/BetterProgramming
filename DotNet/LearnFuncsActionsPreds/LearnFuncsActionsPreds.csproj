@@ -47,6 +47,7 @@
     <Compile Include="1to4\DelWhy.cs" />
     <Compile Include="1to4\LambdaReview.cs" />
     <Compile Include="5to10\AnonMethodsVsLambdas.cs" />
+    <Compile Include="5to10\Closures.cs" />
     <Compile Include="5to10\DelChainException.cs" />
     <Compile Include="5to10\DelChaining.cs" />
     <Compile Include="5to10\FuncsActs.cs" />

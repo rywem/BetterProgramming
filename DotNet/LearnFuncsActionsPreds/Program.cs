@@ -6,14 +6,12 @@ using System.Threading.Tasks;
 
 namespace LearnFuncsActionsPreds
 {
-
-    //class MeDelegate { } 
-
+    
     class Program
     {
         static void Main(string[] args)
         {
-            int currentTutorial = 9;
+            int currentTutorial = 10;
 
             switch (currentTutorial)
             {
@@ -52,7 +50,11 @@ namespace LearnFuncsActionsPreds
                 case 9:
                     AnonMethodsVsLambdas ams = new AnonMethodsVsLambdas();
                     ams.Run();
-                    break;                    
+                    break;
+                case 10:
+                    Closures cams = new Closures();
+                    cams.Run();
+                    break;
                 default:
                         break;
             }
