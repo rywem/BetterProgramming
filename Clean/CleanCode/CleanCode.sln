@@ -1,0 +1,23 @@
+
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CleanCodeConsole", "CleanCodeConsole\CleanCodeConsole.csproj", "{4372995D-A63F-44BD-AA0D-174E00F2DF82}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CleanCode_Library", "CleanCode_Library\CleanCode_Library.csproj", "{85780AB1-2495-4FDC-9BC7-166391169BD8}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4372995D-A63F-44BD-AA0D-174E00F2DF82}.Debug|x86.ActiveCfg = Debug|x86
+		{4372995D-A63F-44BD-AA0D-174E00F2DF82}.Debug|x86.Build.0 = Debug|x86
+		{4372995D-A63F-44BD-AA0D-174E00F2DF82}.Release|x86.ActiveCfg = Release|x86
+		{4372995D-A63F-44BD-AA0D-174E00F2DF82}.Release|x86.Build.0 = Release|x86
+		{85780AB1-2495-4FDC-9BC7-166391169BD8}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{85780AB1-2495-4FDC-9BC7-166391169BD8}.Debug|x86.Build.0 = Debug|Any CPU
+		{85780AB1-2495-4FDC-9BC7-166391169BD8}.Release|x86.ActiveCfg = Release|Any CPU
+		{85780AB1-2495-4FDC-9BC7-166391169BD8}.Release|x86.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
