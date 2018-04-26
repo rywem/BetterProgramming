@@ -11,8 +11,13 @@ namespace Learn_PLINQ_Async_Tasks
     {
         static void Main(string[] args)
         {
-            WordReversal reverse = new WordReversal();
-            reverse.Run();
+            LoopExamples examples = new LoopExamples();
+            examples.ParallelFor();
+            //TasksStuff stuff = new TasksStuff();
+            //stuff.VoidTask();
+
+            //WordReversal reverse = new WordReversal();
+            //reverse.Run();
 
             Console.ReadLine();
         }

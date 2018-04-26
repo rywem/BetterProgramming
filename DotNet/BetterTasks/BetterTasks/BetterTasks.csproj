@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{F81A2D81-E264-43F3-A320-BF657A5841A4}</ProjectGuid>
+    <ProjectGuid>{ECA66F66-E275-4EEF-9198-CE5631F7B925}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>Learn_PLINQ_Async_Tasks</RootNamespace>
-    <AssemblyName>Learn_PLINQ_Async_Tasks</AssemblyName>
-    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
+    <RootNamespace>BetterTasks</RootNamespace>
+    <AssemblyName>BetterTasks</AssemblyName>
+    <TargetFrameworkVersion>v4.7.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
   </PropertyGroup>
@@ -42,10 +42,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="LoopExamples.cs" />
-    <Compile Include="LoopExtensions.cs" />
-    <Compile Include="PLINQ\TasksStuff.cs" />
-    <Compile Include="PLINQ\WordReversal.cs" />
+    <Compile Include="LearnCancellationTokens.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
