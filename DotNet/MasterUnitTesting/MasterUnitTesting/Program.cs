@@ -6,7 +6,16 @@ namespace MasterUnitTesting
     {
         public static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            try
+            {
+                UnitTestsLibrary.Class1 libclass = new UnitTestsLibrary.Class1();
+                libclass.MyMethod();
+            }
+            catch (Exception ex) 
+            {
+                Console.WriteLine(ex.ToString());                
+            }
+
         }
     }
 }
