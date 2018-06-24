@@ -8,14 +8,13 @@ namespace MasterUnitTesting
         {
             try
             {
-                UnitTestsLibrary.Class1 libclass = new UnitTestsLibrary.Class1();
-                libclass.MyMethod();
+                UnitTestsLibrary.NunitExamples libclass = new UnitTestsLibrary.NunitExamples();
+                libclass.FailExample();
             }
             catch (Exception ex) 
             {
                 Console.WriteLine(ex.ToString());                
             }
-
         }
     }
 }

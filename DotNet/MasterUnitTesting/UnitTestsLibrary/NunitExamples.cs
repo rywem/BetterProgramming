@@ -4,10 +4,10 @@ using NUnit.Framework;
 namespace UnitTestsLibrary
 {
     [TestFixture]
-    public class Class1
+    public class NunitExamples
     {
         [Test]
-        public void MyMethod()
+        public void FailExample()
         {
             Assert.Fail();
         }
