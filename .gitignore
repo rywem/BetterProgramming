@@ -289,3 +289,4 @@ __pycache__/
 DataScience.zip
 DataScience-Python3
 /MVC/Commerce/Commerce.Data/App.config
+.DS_Store
