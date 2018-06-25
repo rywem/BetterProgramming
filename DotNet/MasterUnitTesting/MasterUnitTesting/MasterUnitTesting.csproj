@@ -44,6 +44,10 @@
       <Project>{FAED345C-489F-4B6D-A2FF-78E81D1E4ACB}</Project>
       <Name>UnitTestsLibrary</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\LearnFuncsActionsPreds\LearnFuncsActionsPreds.csproj">
+      <Project>{CA0E1D92-6000-4F2C-9DEB-D67CDACC48A0}</Project>
+      <Name>LearnFuncsActionsPreds</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

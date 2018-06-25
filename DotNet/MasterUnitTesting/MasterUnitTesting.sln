@@ -5,6 +5,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MasterUnitTesting", "Master
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTestsLibrary", "UnitTestsLibrary\UnitTestsLibrary.csproj", "{FAED345C-489F-4B6D-A2FF-78E81D1E4ACB}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LearnFuncsActionsPreds", "..\LearnFuncsActionsPreds\LearnFuncsActionsPreds.csproj", "{CA0E1D92-6000-4F2C-9DEB-D67CDACC48A0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StandardHelperLibrary", "..\Helpers\StandardHelperLibrary\StandardHelperLibrary\StandardHelperLibrary.csproj", "{5E005BF4-7115-458C-B0E2-5628FA9D79FF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x86 = Debug|x86
@@ -19,5 +23,13 @@ Global
 		{FAED345C-489F-4B6D-A2FF-78E81D1E4ACB}.Debug|x86.Build.0 = Debug|Any CPU
 		{FAED345C-489F-4B6D-A2FF-78E81D1E4ACB}.Release|x86.ActiveCfg = Release|Any CPU
 		{FAED345C-489F-4B6D-A2FF-78E81D1E4ACB}.Release|x86.Build.0 = Release|Any CPU
+		{CA0E1D92-6000-4F2C-9DEB-D67CDACC48A0}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{CA0E1D92-6000-4F2C-9DEB-D67CDACC48A0}.Debug|x86.Build.0 = Debug|Any CPU
+		{CA0E1D92-6000-4F2C-9DEB-D67CDACC48A0}.Release|x86.ActiveCfg = Release|Any CPU
+		{CA0E1D92-6000-4F2C-9DEB-D67CDACC48A0}.Release|x86.Build.0 = Release|Any CPU
+		{5E005BF4-7115-458C-B0E2-5628FA9D79FF}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{5E005BF4-7115-458C-B0E2-5628FA9D79FF}.Debug|x86.Build.0 = Debug|Any CPU
+		{5E005BF4-7115-458C-B0E2-5628FA9D79FF}.Release|x86.ActiveCfg = Release|Any CPU
+		{5E005BF4-7115-458C-B0E2-5628FA9D79FF}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

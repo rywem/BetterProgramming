@@ -11,5 +11,17 @@ namespace UnitTestsLibrary
         {
             Assert.Fail();
         }
+        [Test]
+        public void AssertExample()
+        {
+            try
+            {
+                Assert.That(2 + 2, Is.EqualTo(4));
+            }
+            catch(Exception ex)
+            {
+                Console.WriteLine(ex);
+            }
+        }
     }
 }
