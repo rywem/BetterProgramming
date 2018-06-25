@@ -23,5 +23,10 @@ namespace UnitTestsLibrary
                 Console.WriteLine(ex);
             }
         }
+        [Test]
+        public void Warnings() 
+        {
+            Warn.If(2 + 2 != 5);
+        }
     }
 }
