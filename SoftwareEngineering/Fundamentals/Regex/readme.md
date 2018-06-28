@@ -1,6 +1,9 @@
 # Regex
 
-### Examples
+Content in this workspace is based upon the course:
+[Regex Academy - an introduction to text parsing sorcery](https://www.udemy.com/regex-academy-an-introduction-to-text-parsing-sorcery/learn/v4/content)
+
+### Examples - Matching
 1. Character matching:
 ```
 pattern:  22
@@ -17,11 +20,16 @@ abcdefghijklmnopqrstuvwxyz
 4. match a range of characters, upper or lower `[a-zA-Z]`
 5. match a range of characters, upper or lower `[a-zA-Z1-9]`
 6. negate matches `[^a-z]`  matches anything not lowercase
-    1. A carat outside has a different meaning. means anchor `^[^a-z]`
+    - A carat outside has a different meaning. means anchor `^[^a-z]`
 7. matching a special character:
     1. two ways (goal: matches, a through z, and a dash):
         1.  escape with backslash `[\-a-z]`
         2. dash at end: `[a-z-]`
 8. match characters @ and ^: `[@^]`
-    1. reminder, negation: `[^@^]`
-9. match via ascii table: `[\ -~]`   - matches by ascii table position.
+    - reminder, negation: `[^@^]`
+9. match via ascii table: `[\ -~]`   
+    - matches by ascii table position.
+10. Alteration: `[cat|dog]  cat dog fish`
+    1. first tries to match left, then right if it fails
+11. metacharacters
+    1. .  (period) - "anything except new lines"
