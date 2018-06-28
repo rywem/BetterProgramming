@@ -16,3 +16,5 @@ abcdefghijklmnopqrstuvwxyz
 3. match a range of characters `[a-z]`
 4. match a range of characters, upper or lower `[a-zA-Z]`
 5. match a range of characters, upper or lower `[a-zA-Z1-9]`
+6. negate matches `[^a-z]`  matches anything not lowercase
+    1. A carat outside has a different meaning. means anchor `^[^a-z]`
