@@ -24,3 +24,4 @@ abcdefghijklmnopqrstuvwxyz
         2. dash at end: `[a-z-]`
 8. match characters @ and ^: `[@^]`
     1. reminder, negation: `[^@^]`
+9. match via ascii table: `[\ -~]`   - matches by ascii table position.
