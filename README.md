@@ -17,4 +17,6 @@ A repository for learning better programming patterns and techniques.
     2. Clean
     3. DesignPatterns
     4. MontyHall
-    5. ProjectEuler
+    5. ProjectEuler - a section for previous project euler code samples
+    6. Fundamentals - a section for covering fundamental computer science concepts
+        1. [Fundamentas/Regex](https://github.com/cybervoid/BetterProgramming/tree/master/SoftwareEngineering/Fundamentals/Regex) - a section for learning the fundamentals of regex
