@@ -1,5 +1,6 @@
 # Regex
 
+### Examples
 1. Character matching:
 ```
 pattern:  22
@@ -13,3 +14,5 @@ abcdefghijklmnopqrstuvwxyz
 ```
 
 3. match a range of characters `[a-z]`
+4. match a range of characters, upper or lower `[a-zA-Z]`
+5. match a range of characters, upper or lower `[a-zA-Z1-9]`
