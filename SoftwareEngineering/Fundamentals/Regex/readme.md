@@ -30,6 +30,8 @@ abcdefghijklmnopqrstuvwxyz
 9. match via ascii table: `[\ -~]`   
     - matches by ascii table position.
 10. Alteration: `[cat|dog]  cat dog fish`
-    1. first tries to match left, then right if it fails
+    - first tries to match left, then right if it fails
 11. metacharacters
-    1. .  (period) - "anything except new lines"
+    - .  (period) - "anything except new lines"
+    - _ (underscore) - ""
+    - \\w - (backslash w, `[a-zA-Z0-9]`)
