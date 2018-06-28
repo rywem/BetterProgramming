@@ -2,9 +2,9 @@
 using System.Text.RegularExpressions;
 namespace Regex
 {
-    public class RegexTests
+    public class RegexHelper
     {
-        public RegexTests()
+        public RegexHelper()
         {
         }
 
