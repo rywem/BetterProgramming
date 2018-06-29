@@ -33,5 +33,13 @@ abcdefghijklmnopqrstuvwxyz
     - first tries to match left, then right if it fails
 11. metacharacters
     - .  (period) - "anything except new lines"
-    - _ (underscore) - ""
-    - \\w - (backslash w, `[a-zA-Z0-9]`)
+    - \\w - get all characters (backslash w, `[a-zA-Z0-9]`)
+    - \\W - (backslash CAPITAL W for negation, `[^a-zA-Z0-9]`)
+    - \\d - get all digits `[0-9]`
+    - \\D - negation of all digits `[^0-9]`
+    - \\t - tabs
+    - \\n - new lines (line breaks)
+    - \\s - any type of space (new line, tab, space)
+    - \\S - anything not a space, (eg all characters)
+    - \\ -  (backslash space) finds spaces
+    
