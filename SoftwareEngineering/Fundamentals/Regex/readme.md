@@ -44,9 +44,20 @@ abcdefghijklmnopqrstuvwxyz
     - \\ -  (backslash space) finds spaces
     - \\[, \\] - match actual brackets
 12. quantifiers
-    - * - 0 or more times
-    - + - 1 or more times
+    1. * - 0 or more times
+    2. + - 1 or more times
     ```
     [a-z]+
     hello how are you?
     ```
+    3. greedy - consume as much as possible.
+        - ? - use question mark to make things non greedy
+        - example: creating regex that matches start and end tag, and everything in between:
+            - `<p>paragraph 1</p><p>paragraph 2</p><p>paragraph 3</p>`
+                - `<p>.+<\/p>` (this is correct) - matches first <p> all the way to the last </p>
+                - `<p>.+?<\/p>` (this is incorrect) - matches first <p> to the first occurrence of </p>
+
+
+### Resources
+1. [regex101](https://regex101.com/)
+2. Udemy course [Regex Academy - an introduction to text parsing sorcery](https://www.udemy.com/regex-academy-an-introduction-to-text-parsing-sorcery/learn/v4/content)
