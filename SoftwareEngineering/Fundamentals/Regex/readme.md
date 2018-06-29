@@ -42,4 +42,11 @@ abcdefghijklmnopqrstuvwxyz
     - \\s - any type of space (new line, tab, space)
     - \\S - anything not a space, (eg all characters)
     - \\ -  (backslash space) finds spaces
-    
+    - \\[, \\] - match actual brackets
+12. quantifiers
+    - * - 0 or more times
+    - + - 1 or more times
+    ```
+    [a-z]+
+    hello how are you?
+    ```
