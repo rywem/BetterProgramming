@@ -1,12 +1,8 @@
 ﻿using System;
 namespace Regex
 {
-    public class TestingData
+    public static class Data
     {
-        public TestingData()
-        {
-        }
-
         public static string Emails()
         {
             string value = "My Name <my-email@email.com>\n";
