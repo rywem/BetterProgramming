@@ -8,4 +8,4 @@ A work for improving general ability at software engineering.
 4. [MontyHall](MontyHall) - An attempt to represent the MontyHall problem with code.
 5. [ProjectEuler](ProjectEuler) - A 2016 attempt to improve personal general problem solving skills with software. Based upon [Project Euler's](https://projecteuler.net/) problem sets.
 7. Fundamentals - a section for covering fundamental computer science concepts
-    1. [Fundamentas/Regex](https://github.com/cybervoid/BetterProgramming/tree/master/SoftwareEngineering/Fundamentals/Regex) - a section for learning the fundamentals of regex
+    1. [Regex](https://github.com/cybervoid/BetterProgramming/tree/master/SoftwareEngineering/Fundamentals/Regex) - a section for learning the fundamentals of regex
