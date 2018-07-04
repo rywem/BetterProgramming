@@ -54,8 +54,9 @@ abcdefghijklmnopqrstuvwxyz
         - ? - use question mark to make things non greedy
         - example: creating regex that matches start and end tag, and everything in between:
             - `<p>paragraph 1</p><p>paragraph 2</p><p>paragraph 3</p>`
-                - `<p>.+<\/p>` (this is correct) - matches first <p> all the way to the last </p>
-                - `<p>.+?<\/p>` (this is incorrect) - matches first <p> to the first occurrence of </p>
+                - `<p>.+<\/p>` (this is incorrect) - matches first <p> all the way to the last </p>
+                - `<p>.+?<\/p>` (this is correct) - matches first <p> to the first occurrence of </p>.
+    4. ? tries to consume the fewest amount of resources when searching.
 
 
 ### Resources
