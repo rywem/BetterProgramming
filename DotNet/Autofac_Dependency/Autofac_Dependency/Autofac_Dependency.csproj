@@ -10,5 +10,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Remove="Interfaces.cs" />
+    <Compile Remove="Log_Implementation.cs" />
   </ItemGroup>
 </Project>

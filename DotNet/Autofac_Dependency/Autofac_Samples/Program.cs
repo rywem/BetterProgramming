@@ -27,9 +27,11 @@ namespace Autofac_Samples
         public class Engine
         {
             private ILog log;
+            private int id;
             public Engine(ILog log)
             {
                 this.log = log;
+                this.id = new Random().Next();
             }
         }
 
