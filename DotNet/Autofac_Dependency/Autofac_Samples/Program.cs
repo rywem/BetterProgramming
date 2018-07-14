@@ -6,7 +6,10 @@ namespace Autofac_Samples
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            var log = new ConsoleLog();
+            var engine = new Engine(log);
+            var car = new Car(engine, log);
+            car.Go();
         }
         /// <summary>
         /// non-DI implementation
@@ -31,7 +34,12 @@ namespace Autofac_Samples
             public Engine(ILog log)
             {
                 this.log = log;
-                this.id = new Random().Next();
+                this.id = new Random().Next(); 
+            }
+
+            public void Ahead(int power)
+            {
+                log.Write($"Engine [{id}] ahead {power}");
             }
         }
 
@@ -44,6 +52,12 @@ namespace Autofac_Samples
             {
                 this.engine = engine;
                 this.log = log;
+            }
+
+            public void Go()
+            {
+                engine.Ahead(100);
+                log.Write("Car going forward...");
             }
         }
     }
