@@ -3,6 +3,8 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Autofac_Dependency", "Autofac_Dependency\Autofac_Dependency.csproj", "{FAD83782-61B7-432C-A72B-7568D1C84827}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Autofac_Samples", "Autofac_Samples\Autofac_Samples.csproj", "{716177AC-0EB2-4419-816A-4997DBA4F424}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -13,5 +15,9 @@ Global
 		{FAD83782-61B7-432C-A72B-7568D1C84827}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FAD83782-61B7-432C-A72B-7568D1C84827}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FAD83782-61B7-432C-A72B-7568D1C84827}.Release|Any CPU.Build.0 = Release|Any CPU
+		{716177AC-0EB2-4419-816A-4997DBA4F424}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{716177AC-0EB2-4419-816A-4997DBA4F424}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{716177AC-0EB2-4419-816A-4997DBA4F424}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{716177AC-0EB2-4419-816A-4997DBA4F424}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
