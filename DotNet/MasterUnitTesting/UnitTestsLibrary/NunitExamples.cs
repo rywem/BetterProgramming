@@ -27,6 +27,10 @@ namespace UnitTestsLibrary
         public void Warnings() 
         {
             Warn.If(2 + 2 != 5);
+            //Use lambdas for conditional warnings
+            Warn.If(() => 2 + 2, Is.Not.EqualTo(3)); // conditional warnings with lambdas
+            //Run the test after 2000 miliseconds
+            Warn.If(() => 2 + 2, Is.Not.EqualTo(3).After(2000));
         }
     }
 }
