@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace InheritanceLibrary
+namespace InheritanceLibrary.Customer
 {
     public abstract class Customer
     {
