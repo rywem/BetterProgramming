@@ -4,7 +4,7 @@ using System.Text;
 
 namespace InheritanceLibrary.Employee
 {
-    public class BaseEmployee
+    public abstract class BaseEmployee
     {
         public int ID { get; set; }
         public string FirstName { get; set; }
@@ -13,11 +13,6 @@ namespace InheritanceLibrary.Employee
         {
             return this.FirstName + " " + LastName;
         }
-
-        public virtual int GetMonthlySalary()
-        {
-            throw new NotImplementedException();
-            //return this.AnnualSalary / 12;
-        }
+        public abstract int GetMonthlySalary();
     }
 }
