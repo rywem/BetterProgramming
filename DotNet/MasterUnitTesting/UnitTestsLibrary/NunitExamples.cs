@@ -31,6 +31,11 @@ namespace UnitTestsLibrary
             Warn.If(() => 2 + 2, Is.Not.EqualTo(3)); // conditional warnings with lambdas
             //Run the test after 2000 miliseconds
             Warn.If(() => 2 + 2, Is.Not.EqualTo(3).After(2000));
+            //warn.unless is the inverse of warn.if
+            //"unless some condition holds"
+            Warn.Unless(() => 2 + 2, Is.EqualTo(5).After(3000));
+            //issue an unconditional warning
+            Assert.Warn("This is an unconditional warning");
         }
     }
 }
