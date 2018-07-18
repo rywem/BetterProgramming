@@ -9,10 +9,16 @@ namespace MasterUnitTesting
             LearnFuncsActionsPreds.Runner runner = new LearnFuncsActionsPreds.Runner();
             try
             {
-                UnitTestsLibrary.NunitExamples libclass = new UnitTestsLibrary.NunitExamples();
+                #region "basic examples"
+                //UnitTestsLibrary.NunitExamples libclass = new UnitTestsLibrary.NunitExamples();
                 //libclass.FailExample();
                 //libclass.AssertExample();
-                libclass.Warnings();
+                //libclass.Warnings();
+                #endregion
+
+                UnitTestsLibrary.AccountTests accountTests = new UnitTestsLibrary.AccountTests();
+
+                accountTests.BankAccountShouldIncreaseOnPositiveDeposit();
             }
             catch (Exception ex) 
             {

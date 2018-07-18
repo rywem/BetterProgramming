@@ -6,10 +6,10 @@ namespace UnitTestsLibrary
     /// <summary>
     /// The demo application for Unit Tests
     /// </summary>
-    public class Account
+    public class BankAccount
     {
         public int Balance { get; private set; }
-        public Account(int startingBalance)
+        public BankAccount(int startingBalance)
         {
             Balance = startingBalance;
         }
@@ -30,7 +30,15 @@ namespace UnitTestsLibrary
         [Test]
         public void BankAccountShouldIncreaseOnPositiveDeposit() 
         {
-            //assertions -> a condition should hold after a certain operation
+            // pattern:
+            // aaa - arrange, act, asset
+
+            //step one, arrage -  "arrange with a starting balance of 100"
+            var bankAccount = new BankAccount(100);
+            //act - "act on the bank account by depositing 100" 
+            bankAccount.Deposit(100);
+            // assert - "assert the new balance is equal to 200"
+            Assert.That(bankAccount, Is.EqualTo(200));
 
         }
     }
