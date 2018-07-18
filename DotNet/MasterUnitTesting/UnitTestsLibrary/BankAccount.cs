@@ -25,21 +25,43 @@ namespace UnitTestsLibrary
         }
     }
     [TestFixture]
+    [SetUpFixture]
     public class AccountTests
     {
+        public BankAccount Account { get; set; }
+        [SetUp]
+        public void SetUp()
+        {
+            //step one, arrage -  "arrange with a starting balance of 100"
+            Account = new BankAccount(100);
+        }
+
+
+        [TearDown]
+        public void TearDown()
+        {
+            Account = null;
+        }
         [Test]
         public void BankAccountShouldIncreaseOnPositiveDeposit() 
         {
             // pattern:
             // aaa - arrange, act, asset
-
-            //step one, arrage -  "arrange with a starting balance of 100"
-            var bankAccount = new BankAccount(100);
             //act - "act on the bank account by depositing 100" 
-            bankAccount.Deposit(100);
+            Account.Deposit(100);
             // assert - "assert the new balance is equal to 200"
-            Assert.That(bankAccount, Is.EqualTo(200));
+            Assert.That(Account.Balance, Is.EqualTo(200));
+        }
 
+        [Test]
+        public void LessThanOne()
+        {
+            Account.Withdraw(100);
+            Assert.Multiple(() =>
+            {
+                Assert.That(Account.Balance, Is.EqualTo(0));
+                Assert.That(Account.Balance, Is.LessThan(1));
+            });
         }
     }
 }
