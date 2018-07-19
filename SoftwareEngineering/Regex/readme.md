@@ -57,7 +57,9 @@ abcdefghijklmnopqrstuvwxyz
                 - `<p>.+<\/p>` (this is incorrect) - matches first <p> all the way to the last </p>
                 - `<p>.+?<\/p>` (this is correct) - matches first <p> to the first occurrence of </p>.
     4. ? tries to consume the fewest amount of resources when searching.
-
+13. iteration -
+    - `4...` on `4444`
+    - `4*` on `4444`
 
 ### Resources
 1. [regex101](https://regex101.com/)
