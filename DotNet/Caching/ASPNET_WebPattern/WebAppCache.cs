@@ -16,7 +16,7 @@ namespace ASPNET_WebPattern
         }
         public static void Load()
         {
-            HttpContext.Current.Cache["ContextData"] = new RandomGenerator().GetSimulatedData();            
+            HttpContext.Current.Cache["ContextData"] = new RandomGenerator().GetSimulatedData();
         }
     }
 
