@@ -37,6 +37,33 @@ namespace LearnFuncsActionsPreds
             }
             Console.WriteLine(output);
         }
+        public void SimpleAnonymous()
+        {
+            //takes no parameters
+            Action actionWithoutParameter = new Action(() =>
+            {
+                Console.WriteLine("hello from anon1");
+            });
+            actionWithoutParameter();
+
+            Action<int> actionWithParameter = m =>
+            {
+                Console.WriteLine("hello from anon3: " + m);
+            };
+            actionWithParameter(4);
+        }
+
+        public void CombinatorialVoidAsAnonymous()
+        {
+            Action action = new Action(() => 
+            {
+                Console.WriteLine("hello from anon1");
+            });   
+            Action p = () =>
+            {
+                Console.WriteLine("hello from anon2");
+            };
+        }
 
         public long Combinatorial(int p)
         {
