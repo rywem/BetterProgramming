@@ -16,17 +16,20 @@ namespace UnitTestsLibrary
 
         public void Deposit(int amount)
         {
+            if (amount <= 0)
+                throw new ArgumentException("Deposit amount must be positive " , nameof(amount));
             this.Balance += amount;
         }
 
-        public void Withdraw(int amount)
+        public bool Withdraw(int amount)
         {
-            this.Balance -= amount;
+            //this.Balance -= amount;
+            return false;
         }
     }
     [TestFixture]
     [SetUpFixture]
-    public class AccountTests
+    public class BankAccountTests
     {
         public BankAccount Account { get; set; }
         [SetUp]
@@ -54,7 +57,7 @@ namespace UnitTestsLibrary
         }
 
         [Test]
-        public void LessThanOne()
+        public void MultipleAsserts()
         {
             Account.Withdraw(100);
             Assert.Multiple(() =>
@@ -62,6 +65,33 @@ namespace UnitTestsLibrary
                 Assert.That(Account.Balance, Is.EqualTo(0));
                 Assert.That(Account.Balance, Is.LessThan(1));
             });
+        }
+
+        [Test]
+        public void BankAccountShouldThrowOnNonPositiveDeposit()
+        {
+            //we are expecting an argument to be thrown of type ArgumentException
+            var ex = Assert.Throws<ArgumentException>(() => Account.Deposit(-1));
+
+            StringAssert.StartsWith("Deposit amount must be positive", ex.Message);
+        }
+    }
+
+    [TestFixture]
+    public class DataDrivenTests
+    {
+        private BankAccount ba;
+        [SetUp]
+        public void SetUp()
+        {
+            ba = new BankAccount(100);
+        }
+
+        public void TestMultipleWithdrawalScenarios(int amountToWithdraw, 
+                                    bool shouldSucceed, int expectedBalance)
+        {
+            var result = ba.Withdraw(amountToWithdraw);
+            Warn.If(!result, "Failed for some reason");
         }
     }
 }

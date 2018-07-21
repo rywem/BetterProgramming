@@ -7,6 +7,7 @@ namespace MasterUnitTesting
         public static void Main(string[] args)
         {
             LearnFuncsActionsPreds.Runner runner = new LearnFuncsActionsPreds.Runner();
+            runner.SimpleAnonymous();
             try
             {
                 #region "basic examples"
@@ -16,9 +17,9 @@ namespace MasterUnitTesting
                 //libclass.Warnings();
                 #endregion
 
-                UnitTestsLibrary.AccountTests accountTests = new UnitTestsLibrary.AccountTests();
-
-                accountTests.BankAccountShouldIncreaseOnPositiveDeposit();
+                UnitTestsLibrary.BankAccountTests accountTests = new UnitTestsLibrary.BankAccountTests();
+                accountTests.BankAccountShouldThrowOnNonPositiveDeposit();
+                //accountTests.BankAccountShouldIncreaseOnPositiveDeposit();
             }
             catch (Exception ex) 
             {
