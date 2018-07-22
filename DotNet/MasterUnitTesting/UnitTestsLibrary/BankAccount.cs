@@ -23,7 +23,11 @@ namespace UnitTestsLibrary
 
         public bool Withdraw(int amount)
         {
-            //this.Balance -= amount;
+            if (amount <= Balance)
+            {
+                this.Balance -= amount;
+                return true;
+            }
             return false;
         }
     }
@@ -50,7 +54,7 @@ namespace UnitTestsLibrary
         {
             // pattern:
             // aaa - arrange, act, asset
-            //act - "act on the bank account by depositing 100" 
+            // act - "act on the bank account by depositing 100" 
             Account.Deposit(100);
             // assert - "assert the new balance is equal to 200"
             Assert.That(Account.Balance, Is.EqualTo(200));
@@ -86,12 +90,21 @@ namespace UnitTestsLibrary
         {
             ba = new BankAccount(100);
         }
-
+        [Test]
+        // test cases can specify mulitple inputs to run multiple tests
+        [TestCase(50, true, 50)] //if withdraw 50, expect true and remaining balance to be also 50
+        [TestCase(100, true, 0)] //if withdraw 100, expect true and remaining balance to be also 0
+        [TestCase(1000, false, 100)] //attempt to withdraw 1000, should fail and return false, balance should remain 100
         public void TestMultipleWithdrawalScenarios(int amountToWithdraw, 
                                     bool shouldSucceed, int expectedBalance)
         {
             var result = ba.Withdraw(amountToWithdraw);
-            Warn.If(!result, "Failed for some reason");
+            //Warn.If(!result, "Failed for some reason");
+            Assert.Multiple(() =>
+            {
+                Assert.That(result, Is.EqualTo(shouldSucceed));
+                Assert.That(expectedBalance, Is.EqualTo(ba.Balance));
+            });
         }
     }
 }
