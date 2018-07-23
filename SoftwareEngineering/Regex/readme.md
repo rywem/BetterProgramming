@@ -44,8 +44,8 @@ abcdefghijklmnopqrstuvwxyz
     - \\ -  (backslash space) finds spaces
     - \\[, \\] - match actual brackets
 12. quantifiers
-    1. * - 0 or more times
-    2. + - 1 or more times
+    1. `*` - 0 or more times
+    2. `+` - 1 or more times
     ```
     [a-z]+
     hello how are you?
