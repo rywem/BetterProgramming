@@ -53,6 +53,15 @@ namespace LearnFuncsActionsPreds
             actionWithParameter(4);
         }
 
+        public void AnonFunctionParams()
+        {
+            int a = 1;
+            int b = 3;
+            int c = 0;
+            Func<int, int, int> myFunc = (x, y) =>  x + y;
+            Console.WriteLine(myFunc.Invoke(a, b));
+        }
+
         public void CombinatorialVoidAsAnonymous()
         {
             Action action = new Action(() => 
