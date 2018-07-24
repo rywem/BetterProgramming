@@ -6,4 +6,5 @@ A repository for learning better programming patterns and techniques.
     1. [Deep_Learning](ArtificialIntelligence/Deep_Learning) - A repository for learning Deep learning and genetic algorithms
     2. [Machine_Learning](ArtificialIntelligence/Machine_Learning)- A directory for learning statistical machine learning algorithms.
 2. [DotNet](DotNet) - A directory for code relating to misc .NET things
+    1. [Functions and Actions Examples](https://github.com/cybervoid/BetterProgramming/blob/master/DotNet/LearnFuncsActionsPreds/Runner.cs) - examples of funcs and actions
 3. [SoftwareEngineering](SoftwareEngineering) - A section for general improvement in software Engineer
