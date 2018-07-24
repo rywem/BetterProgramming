@@ -6,28 +6,36 @@ namespace LearnFuncsActionsPreds
     delegate T MeDelegate<T>();
     public class Runner
     {
-        public void ActionRunner(Action action)
-        {
-            
-        }
-
-        public void DelegateRunner(Delegate d)
-        {
-            
-        }
-
-        public void FuncExample(int x) 
+        public void FuncExample_WithoutParams(int x) 
         {
             Func<int, long> result = s => Combinatorial(s);
 
             Console.WriteLine(result(x));
         }
-        public void ActionExample(int x)
+        public void FuncExample_WithParams()
+        {
+            int a = 1;
+            int b = 3;
+
+            Func<int, int, int> myFunc = (x, y) => x + y;
+            Console.WriteLine(myFunc.Invoke(a, b));
+        }
+        public void ActionExample_With_One_Param(int x)
         {
             Action<int> result = a => CombinatorialVoid(a);
             result(x);
         }
+        public void ActionExample_Without_Params()
+        {
+            Action result = () => CombinatorialVoid(1);
+            result();
+        }
 
+        public void FuncExample_Without_Params()
+        {
+            Func<int> result = () => 2; //no paramas, returns an int
+            Console.WriteLine(result());
+        }
         public void CombinatorialVoid(int p)
         {
             long output = 0;
@@ -37,7 +45,8 @@ namespace LearnFuncsActionsPreds
             }
             Console.WriteLine(output);
         }
-        public void SimpleAnonymous()
+
+        public void Action_Anonymous_Simple()
         {
             //takes no parameters
             Action actionWithoutParameter = new Action(() =>
@@ -53,13 +62,8 @@ namespace LearnFuncsActionsPreds
             actionWithParameter(4);
         }
 
-        public void AnonFunctionParams()
-        {
-            int a = 1;
-            int b = 3;
-            int c = 0;
-            Func<int, int, int> myFunc = (x, y) =>  x + y;
-            Console.WriteLine(myFunc.Invoke(a, b));
+        public void Func_Anonymous_Simple(){
+            
         }
 
         public void CombinatorialVoidAsAnonymous()
