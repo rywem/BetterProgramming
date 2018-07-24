@@ -62,8 +62,20 @@ namespace LearnFuncsActionsPreds
             actionWithParameter(4);
         }
 
-        public void Func_Anonymous_Simple(){
-            
+        public void Func_Anonymous_Simple()
+        {
+            Func<int, int> funcWithParameter = new Func<int, int>(m =>
+            {
+                return m;
+            });
+            Console.WriteLine(funcWithParameter(3));
+
+            Func<int> funcWithoutParameter = new Func<int>(() =>
+            {
+                return 4 + 2;
+            });
+
+            Console.WriteLine(funcWithoutParameter());
         }
 
         public void CombinatorialVoidAsAnonymous()

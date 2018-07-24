@@ -7,7 +7,11 @@ namespace MasterUnitTesting
         public static void Main(string[] args)
         {
             LearnFuncsActionsPreds.Runner runner = new LearnFuncsActionsPreds.Runner();
-            runner.SimpleAnonymous();
+            //runner.SimpleAnonymous();
+            //runner.FuncExample_WithParams();
+            //runner.ActionExample_Without_Params();
+            //runner.FuncExample_Without_Params();
+            runner.Func_Anonymous_Simple();
             try
             {
                 #region "basic examples"
