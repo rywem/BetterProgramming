@@ -64,8 +64,7 @@ abcdefghijklmnopqrstuvwxyz
     - using iterations: `4{4}` - match 4, 4 times
     - match a range: `4{2,4}`
     - match a range (non greedy): `4{2,4}?`
-
-
+    
 ### Resources
 1. [regex101](https://regex101.com/)
 2. Udemy course [Regex Academy - an introduction to text parsing sorcery](https://www.udemy.com/regex-academy-an-introduction-to-text-parsing-sorcery/learn/v4/content)
