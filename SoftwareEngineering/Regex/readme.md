@@ -58,8 +58,13 @@ abcdefghijklmnopqrstuvwxyz
                 - `<p>.+?<\/p>` (this is correct) - matches first <p> to the first occurrence of </p>.
     4. ? tries to consume the fewest amount of resources when searching.
 13. iteration -
-    - `4...` on `4444`
-    - `4*` on `4444`
+    - matching `4` in `4444`... we could ...
+        - `4...` on `4444`
+        - `4*` on `4444`
+    - using iterations: `4{4}` - match 4, 4 times
+    - match a range: `4{2,4}`
+    - match a range (non greedy): `4{2,4}?`
+
 
 ### Resources
 1. [regex101](https://regex101.com/)
