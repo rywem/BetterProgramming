@@ -8,7 +8,7 @@ namespace Autofac_Samples
         static void Main(string[] args)
         {
             var builder = new ContainerBuilder();
-            builder.RegisterType<ConsoleLog>().As<ILog>(); // someone asks for an ILog, give them a ConsoleLog
+            builder.RegisterType<ConsoleLog>().As<ILog>(); // something asks for an ILog, give them a ConsoleLog
             builder.RegisterType<Engine>();
             builder.RegisterType<Car>();
             //now that we've registered the components with the builder, the builder can be used to construct the actual container
