@@ -20,7 +20,21 @@ namespace Autofac_Samples
             car.Go();
             Console.ReadLine();
         }
-
+        static void Main_UnitTesting_Setup(string[] args)
+        {
+            var builder = new ContainerBuilder();
+            builder.RegisterType<ConsoleLog>().As<ILog>();
+            builder.Register((IComponentContext c)
+                             => new Engine(c.Resolve<ILog>(), 121));
+            //builder.RegisterType<Engine>();
+            builder.RegisterType<Car>()
+                   .UsingConstructor(typeof(Engine));
+            //now that we've registered the components with the builder, the builder can be used to construct the actual container
+            IContainer container = builder.Build();
+            var car = container.Resolve<Car>(); // this gets us a Car object, same as  "new"            
+            car.Go();
+            Console.ReadLine();
+        }
         static void Main_RegisterTypes()
         {
             var builder = new ContainerBuilder();
