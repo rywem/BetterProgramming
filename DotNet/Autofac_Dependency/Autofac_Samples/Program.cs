@@ -9,8 +9,9 @@ namespace Autofac_Samples
         {
             var builder = new ContainerBuilder();
             builder.RegisterType<ConsoleLog>().As<ILog>();
-            builder.Register((IComponentContext c) => new Engine())
-            builder.RegisterType<Engine>();
+            builder.Register((IComponentContext c)
+                             => new Engine(c.Resolve<ILog>(), 121));
+            //builder.RegisterType<Engine>();
             builder.RegisterType<Car>()
                    .UsingConstructor(typeof(Engine));
             //now that we've registered the components with the builder, the builder can be used to construct the actual container
@@ -40,15 +41,9 @@ namespace Autofac_Samples
             car.Go();
             Console.ReadLine();
         }
-        static void Main_Instance_Example(string[] args)
+        static void Main_Instance_Example()
         {
             var builder = new ContainerBuilder();
-            //builder.RegisterType<EmailLog>()
-            //       .As<ILog>();
-            //builder.RegisterType<ConsoleLog>()
-            //       .As<ILog>()
-            //       .As<IConsole>()
-            //       .PreserveExistingDefaults(); // something asks for an ILog, give them a ConsoleLog
             var log = new ConsoleLog();
             builder.RegisterInstance(log).As<ILog>();
             builder.RegisterType<Engine>();
@@ -108,6 +103,11 @@ namespace Autofac_Samples
             {
                 this.log = log;
                 this.id = new Random().Next();
+            }
+            public Engine(ILog log, int Id)
+            {
+                this.log = log;
+                this.id = Id;
             }
 
             public void Ahead(int power)
