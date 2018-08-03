@@ -15,10 +15,41 @@ namespace Autofac_Samples
             //typed parameter
             //builder.RegisterType<SMSLog>().As<ILog>().WithParameter(new TypedParameter(typeof(string), "123-456-7890"));
             //resolved parameter
+            //builder.RegisterType<SMSLog>().As<ILog>().WithParameter(
+            //    new ResolvedParameter(
+            //        //predicate
+            //        (propertyInfo, iComponentContext) => propertyInfo.ParameterType == typeof(string) && propertyInfo.Name == "number", 
+            //        //value accessor
+            //        (propertyInfo, iComponentContext) => "123-456-7890"
+            //        )
+            //    );
+
+            //log.Write("test message");
+            Random random = new Random();
+            builder.Register((c, p) => new SMSLog(p.Named<string>("phoneNumber"))).As<ILog>();//do everything at resolution time
+            Console.WriteLine("building");
+            var container = builder.Build();
+            Console.WriteLine("resolving");
+            var log = container.Resolve<ILog>(new NamedParameter("phoneNumber", random.Next().ToString()));
+
+            log.Write("Testing");
+
+            Console.ReadLine();
+        }
+
+
+        static void Main_Parameters()
+        {
+            var builder = new ContainerBuilder();
+            //named parameter
+            //builder.RegisterType<SMSLog>().As<ILog>().WithParameter("number", "123-456-7890");
+            //typed parameter
+            //builder.RegisterType<SMSLog>().As<ILog>().WithParameter(new TypedParameter(typeof(string), "123-456-7890"));
+            //resolved parameter
             builder.RegisterType<SMSLog>().As<ILog>().WithParameter(
                 new ResolvedParameter(
                     //predicate
-                    (propertyInfo, iComponentContext) => propertyInfo.ParameterType == typeof(string) && propertyInfo.Name == "number", 
+                    (propertyInfo, iComponentContext) => propertyInfo.ParameterType == typeof(string) && propertyInfo.Name == "number",
                     //value accessor
                     (propertyInfo, iComponentContext) => "123-456-7890"
                     )
@@ -29,7 +60,6 @@ namespace Autofac_Samples
             log.Write("test message");
             Console.ReadLine();
         }
-
 
         static void Main_Specifying_Generics()
         {
@@ -140,9 +170,9 @@ namespace Autofac_Samples
         {
             string phoneNumber;
 
-            public SMSLog(string number)
+            public SMSLog(string phoneNumber)
             {
-                this.phoneNumber = number;
+                this.phoneNumber = phoneNumber;
             }
             public void Write(string message)
             {
