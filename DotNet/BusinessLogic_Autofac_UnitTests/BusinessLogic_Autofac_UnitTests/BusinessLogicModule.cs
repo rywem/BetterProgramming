@@ -1,10 +1,13 @@
 ﻿using System;
 namespace BusinessLogic_Autofac_UnitTests
 {
-    public class BusinessLogic
+    public class BusinessLogicModule : Module
     {
-        public BusinessLogic()
+        public BusinessLogicModule()
         {
         }
     }
+
+
+
 }
