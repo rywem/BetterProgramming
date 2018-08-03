@@ -1,10 +1,27 @@
-﻿using System;
+﻿using Autofac;
+using System;
 
 namespace Autofac_Samples
 {
     class Program
     {
         static void Main(string[] args)
+        {
+            var builder = new ContainerBuilder();
+            builder.RegisterType<ConsoleLog>().As<ILog>(); // something asks for an ILog, give them a ConsoleLog
+            builder.RegisterType<Engine>();
+            builder.RegisterType<Car>();
+            //now that we've registered the components with the builder, the builder can be used to construct the actual container
+            IContainer container = builder.Build();
+            var car = container.Resolve<Car>(); // this gets us a Car object, same as  "new"            
+            car.Go();
+        }
+
+        /// <summary>
+        /// the pre-autofac main method
+        /// </summary>
+        /// <returns></returns>
+        public static void Main_Old()
         {
             var log = new ConsoleLog();
             var engine = new Engine(log);
@@ -34,7 +51,7 @@ namespace Autofac_Samples
             public Engine(ILog log)
             {
                 this.log = log;
-                this.id = new Random().Next(); 
+                this.id = new Random().Next();
             }
 
             public void Ahead(int power)
