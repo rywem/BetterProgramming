@@ -8,7 +8,12 @@ namespace Autofac_Samples
         static void Main(string[] args)
         {
             var builder = new ContainerBuilder();
-            builder.RegisterType<ConsoleLog>().As<ILog>(); // something asks for an ILog, give them a ConsoleLog
+            builder.RegisterType<EmailLog>()
+                   .As<ILog>();
+            builder.RegisterType<ConsoleLog>()
+                   .As<ILog>()
+                   .As<IConsole>()
+                   .PreserveExistingDefaults(); // something asks for an ILog, give them a ConsoleLog
             builder.RegisterType<Engine>();
             builder.RegisterType<Car>();
             //now that we've registered the components with the builder, the builder can be used to construct the actual container
@@ -35,8 +40,12 @@ namespace Autofac_Samples
         {
             void Write(string message);
         }
+        public interface IConsole
+        {
 
-        public class ConsoleLog : ILog
+        }
+
+        public class ConsoleLog : ILog, IConsole
         {
             public void Write(string message)
             {
@@ -44,6 +53,15 @@ namespace Autofac_Samples
             }
         }
 
+        public class EmailLog : ILog
+        {
+            private const string adminEmail = "admin@foo.com";
+
+            public void Write(string message)
+            {
+                Console.WriteLine($"Email sent to {adminEmail} : {message}");
+            }
+        }
         public class Engine
         {
             private ILog log;
@@ -65,6 +83,11 @@ namespace Autofac_Samples
             private Engine engine;
             private ILog log;
 
+            public Car(Engine engine)
+            {
+                this.engine = engine;
+                this.log = new EmailLog();
+            }
             public Car(Engine engine, ILog log)
             {
                 this.engine = engine;
