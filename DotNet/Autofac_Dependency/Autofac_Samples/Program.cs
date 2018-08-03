@@ -1,5 +1,6 @@
 ﻿using Autofac;
 using System;
+using System.Collections.Generic;
 
 namespace Autofac_Samples
 {
@@ -8,16 +9,31 @@ namespace Autofac_Samples
         static void Main(string[] args)
         {
             var builder = new ContainerBuilder();
-            builder.RegisterType<ConsoleLog>().As<ILog>();
-            builder.Register((IComponentContext c)
-                             => new Engine(c.Resolve<ILog>(), 121));
-            //builder.RegisterType<Engine>();
-            builder.RegisterType<Car>()
-                   .UsingConstructor(typeof(Engine));
-            //now that we've registered the components with the builder, the builder can be used to construct the actual container
+            //suppose that if an IList<T> is requested, they get a "List<T>
+
+            builder.RegisterGeneric(typeof(List<>)).As(typeof(IList<>));
+
             IContainer container = builder.Build();
-            var car = container.Resolve<Car>(); // this gets us a Car object, same as  "new"            
-            car.Go();
+
+            var myList = container.Resolve<IList<int>>();
+            Console.WriteLine(myList.GetType());
+            //var car = container.Resolve<Car>(); // this gets us a Car object, same as  "new"            
+            //car.Go();
+            Console.ReadLine();
+        }
+        static void Main_Specifying_Generics()
+        {
+            var builder = new ContainerBuilder();
+            //suppose that if an IList<T> is requested, they get a "List<T>
+
+            builder.RegisterGeneric(typeof(List<>)).As(typeof(IList<>));
+
+            IContainer container = builder.Build();
+
+            var myList = container.Resolve<IList<int>>();
+            Console.WriteLine(myList.GetType());
+            //var car = container.Resolve<Car>(); // this gets us a Car object, same as  "new"            
+            //car.Go();
             Console.ReadLine();
         }
         static void Main_UnitTesting_Setup(string[] args)
