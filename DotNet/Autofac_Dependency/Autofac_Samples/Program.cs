@@ -1,4 +1,5 @@
 ﻿using Autofac;
+using Autofac.Core;
 using System;
 using System.Collections.Generic;
 
@@ -9,18 +10,27 @@ namespace Autofac_Samples
         static void Main(string[] args)
         {
             var builder = new ContainerBuilder();
-            //suppose that if an IList<T> is requested, they get a "List<T>
+            //named parameter
+            //builder.RegisterType<SMSLog>().As<ILog>().WithParameter("number", "123-456-7890");
+            //typed parameter
+            //builder.RegisterType<SMSLog>().As<ILog>().WithParameter(new TypedParameter(typeof(string), "123-456-7890"));
+            //resolved parameter
+            builder.RegisterType<SMSLog>().As<ILog>().WithParameter(
+                new ResolvedParameter(
+                    //predicate
+                    (propertyInfo, iComponentContext) => propertyInfo.ParameterType == typeof(string) && propertyInfo.Name == "number", 
+                    //value accessor
+                    (propertyInfo, iComponentContext) => "123-456-7890"
+                    )
+                );
 
-            builder.RegisterGeneric(typeof(List<>)).As(typeof(IList<>));
-
-            IContainer container = builder.Build();
-
-            var myList = container.Resolve<IList<int>>();
-            Console.WriteLine(myList.GetType());
-            //var car = container.Resolve<Car>(); // this gets us a Car object, same as  "new"            
-            //car.Go();
+            var container = builder.Build();
+            var log = container.Resolve<ILog>();
+            log.Write("test message");
             Console.ReadLine();
         }
+
+
         static void Main_Specifying_Generics()
         {
             var builder = new ContainerBuilder();
@@ -123,6 +133,20 @@ namespace Autofac_Samples
             public void Write(string message)
             {
                 Console.WriteLine($"Email sent to {adminEmail} : {message}");
+            }
+        }
+
+        public class SMSLog : ILog
+        {
+            string phoneNumber;
+
+            public SMSLog(string number)
+            {
+                this.phoneNumber = number;
+            }
+            public void Write(string message)
+            {
+                Console.WriteLine($"SMS sent to {phoneNumber} : {message}");
             }
         }
         public class Engine
