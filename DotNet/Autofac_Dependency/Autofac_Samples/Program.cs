@@ -8,20 +8,58 @@ namespace Autofac_Samples
         static void Main(string[] args)
         {
             var builder = new ContainerBuilder();
+            builder.RegisterType<ConsoleLog>().As<ILog>();
+            builder.Register((IComponentContext c) => new Engine())
+            builder.RegisterType<Engine>();
+            builder.RegisterType<Car>()
+                   .UsingConstructor(typeof(Engine));
+            //now that we've registered the components with the builder, the builder can be used to construct the actual container
+            IContainer container = builder.Build();
+            var car = container.Resolve<Car>(); // this gets us a Car object, same as  "new"            
+            car.Go();
+            Console.ReadLine();
+        }
+
+        static void Main_RegisterTypes()
+        {
+            var builder = new ContainerBuilder();
             builder.RegisterType<EmailLog>()
                    .As<ILog>();
             builder.RegisterType<ConsoleLog>()
                    .As<ILog>()
                    .As<IConsole>()
                    .PreserveExistingDefaults(); // something asks for an ILog, give them a ConsoleLog
+            //var log = new ConsoleLog();
+            //builder.RegisterInstance(log).As<ILog>();
             builder.RegisterType<Engine>();
-            builder.RegisterType<Car>();
+            builder.RegisterType<Car>()
+                   .UsingConstructor(typeof(Engine));
             //now that we've registered the components with the builder, the builder can be used to construct the actual container
             IContainer container = builder.Build();
             var car = container.Resolve<Car>(); // this gets us a Car object, same as  "new"            
             car.Go();
+            Console.ReadLine();
         }
-
+        static void Main_Instance_Example(string[] args)
+        {
+            var builder = new ContainerBuilder();
+            //builder.RegisterType<EmailLog>()
+            //       .As<ILog>();
+            //builder.RegisterType<ConsoleLog>()
+            //       .As<ILog>()
+            //       .As<IConsole>()
+            //       .PreserveExistingDefaults(); // something asks for an ILog, give them a ConsoleLog
+            var log = new ConsoleLog();
+            builder.RegisterInstance(log).As<ILog>();
+            builder.RegisterType<Engine>();
+            builder.RegisterType<Car>()
+                   .UsingConstructor(typeof(Engine));
+            //now that we've registered the components with the builder, the builder can be used to construct the actual container
+            IContainer container = builder.Build();
+            var car = container.Resolve<Car>(); // this gets us a Car object, same as  "new"            
+            car.Go();
+            Console.ReadLine();
+        }
         /// <summary>
         /// the pre-autofac main method
         /// </summary>
