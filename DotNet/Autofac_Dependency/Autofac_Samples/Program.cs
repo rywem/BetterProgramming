@@ -6,25 +6,58 @@ using System.Reflection;
 
 namespace Autofac_Samples
 {
+
+    public class Parent
+    {
+        public override string ToString()
+        {
+            return "this is the parent";
+        }
+    }
+
+    public class Child
+    {
+        public string Name { get; set; }
+        public Parent Parent { get; set; }
+
+        public void SetParent(Parent parent)
+        {
+            Parent = parent;
+        }
+    }
+
+    public class ParentChildModule : Autofac.Module
+    {
+        protected override void Load(ContainerBuilder builder)
+        {
+            //base.Load(builder);)
+            builder.RegisterType<Parent>();
+            builder.Register(c => new Child() { Parent = c.Resolve<Parent>()});
+        }
+    }
     class Program
     {
         static void Main(string[] args)
         {
-            var assembly = Assembly.GetExecutingAssembly();
+            //https://www.udemy.com/di-ioc-dotnet/learn/v4/t/lecture/6456212?start=0
             var builder = new ContainerBuilder();
-            builder.RegisterAssemblyTypes(assembly)
-                .Where(t => t.Name.EndsWith("Log")) //register's assemblies ending with log
-                .Except<SMSLog>()   //excludes SMSLog
-                .Except<ConsoleLog>(c => c.As<ILog>().SingleInstance())
-                .AsSelf();
-
-            builder.RegisterAssemblyTypes(assembly)
-                .Except<SMSLog>()
-                .Where(t => t.Name.EndsWith("Log"))
-                .As(t => t.GetInterfaces()[0]);  //get the first interface of the type
-            Console.ReadLine();
+            builder.RegisterAssemblyModules(typeof(Program).Assembly);
+            //or
+            builder.RegisterAssemblyModules<ParentChildModule>(typeof(Program).Assembly);
+            var container = builder.Build();
+            Console.WriteLine(container.Resolve<Child>().Parent);
         }
 
+        static void Main_Module()
+        {
+            //https://www.udemy.com/di-ioc-dotnet/learn/v4/t/lecture/6456212?start=0
+            var builder = new ContainerBuilder();
+            builder.RegisterAssemblyModules(typeof(Program).Assembly);
+            //or
+            builder.RegisterAssemblyModules<ParentChildModule>(typeof(Program).Assembly);
+            var container = builder.Build();
+            Console.WriteLine(container.Resolve<Child>().Parent);
+        }
         static void Main_Registering_Assemblies()
         {
             var assembly = Assembly.GetExecutingAssembly();
