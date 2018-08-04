@@ -2,6 +2,7 @@
 using Autofac.Core;
 using System;
 using System.Collections.Generic;
+using System.Reflection;
 
 namespace Autofac_Samples
 {
@@ -9,22 +10,42 @@ namespace Autofac_Samples
     {
         static void Main(string[] args)
         {
+            var assembly = Assembly.GetExecutingAssembly();
             var builder = new ContainerBuilder();
-            //named parameter
-            //builder.RegisterType<SMSLog>().As<ILog>().WithParameter("number", "123-456-7890");
-            //typed parameter
-            //builder.RegisterType<SMSLog>().As<ILog>().WithParameter(new TypedParameter(typeof(string), "123-456-7890"));
-            //resolved parameter
-            //builder.RegisterType<SMSLog>().As<ILog>().WithParameter(
-            //    new ResolvedParameter(
-            //        //predicate
-            //        (propertyInfo, iComponentContext) => propertyInfo.ParameterType == typeof(string) && propertyInfo.Name == "number", 
-            //        //value accessor
-            //        (propertyInfo, iComponentContext) => "123-456-7890"
-            //        )
-            //    );
+            builder.RegisterAssemblyTypes(assembly)
+                .Where(t => t.Name.EndsWith("Log")) //register's assemblies ending with log
+                .Except<SMSLog>()   //excludes SMSLog
+                .Except<ConsoleLog>(c => c.As<ILog>().SingleInstance())
+                .AsSelf();
 
-            //log.Write("test message");
+            builder.RegisterAssemblyTypes(assembly)
+                .Except<SMSLog>()
+                .Where(t => t.Name.EndsWith("Log"))
+                .As(t => t.GetInterfaces()[0]));  //get the first interface of the type
+            Console.ReadLine();
+        }
+
+        static void Main_Registering_Assemblies()
+        {
+            var assembly = Assembly.GetExecutingAssembly();
+            var builder = new ContainerBuilder();
+            builder.RegisterAssemblyTypes(assembly)
+                .Where(t => t.Name.EndsWith("Log")) //register's assemblies ending with log
+                .Except<SMSLog>()   //excludes SMSLog
+                .Except<ConsoleLog>(c => c.As<ILog>().SingleInstance())
+                .AsSelf();
+
+            builder.RegisterAssemblyTypes(assembly)
+                .Except<SMSLog>()
+                .Where(t => t.Name.EndsWith("Log"))
+                .As(t => t.GetInterfaces()[0]));  //get the first interface of the type
+            Console.ReadLine();
+        }
+
+
+        static void Main_Parameter_AtResolution()
+        {
+            var builder = new ContainerBuilder();            
             Random random = new Random();
             builder.Register((c, p) => new SMSLog(p.Named<string>("phoneNumber"))).As<ILog>();//do everything at resolution time
             Console.WriteLine("building");
@@ -36,8 +57,6 @@ namespace Autofac_Samples
 
             Console.ReadLine();
         }
-
-
         static void Main_Parameters()
         {
             var builder = new ContainerBuilder();
