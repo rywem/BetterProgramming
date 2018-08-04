@@ -21,7 +21,7 @@ namespace Autofac_Samples
             builder.RegisterAssemblyTypes(assembly)
                 .Except<SMSLog>()
                 .Where(t => t.Name.EndsWith("Log"))
-                .As(t => t.GetInterfaces()[0]));  //get the first interface of the type
+                .As(t => t.GetInterfaces()[0]);  //get the first interface of the type
             Console.ReadLine();
         }
 
@@ -38,7 +38,7 @@ namespace Autofac_Samples
             builder.RegisterAssemblyTypes(assembly)
                 .Except<SMSLog>()
                 .Where(t => t.Name.EndsWith("Log"))
-                .As(t => t.GetInterfaces()[0]));  //get the first interface of the type
+                .As(t => t.GetInterfaces()[0]);  //get the first interface of the type
             Console.ReadLine();
         }
 
