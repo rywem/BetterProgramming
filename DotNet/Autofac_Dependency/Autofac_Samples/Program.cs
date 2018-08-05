@@ -6,7 +6,6 @@ using System.Reflection;
 
 namespace Autofac_Samples
 {
-
     public class Parent
     {
         public override string ToString()
@@ -39,15 +38,18 @@ namespace Autofac_Samples
     {
         static void Main(string[] args)
         {
-            //https://www.udemy.com/di-ioc-dotnet/learn/v4/t/lecture/6456212?start=0
+            //https://www.udemy.com/di-ioc-dotnet/learn/v4/t/lecture/6560422?start=0
             var builder = new ContainerBuilder();
-            builder.RegisterAssemblyModules(typeof(Program).Assembly);
-            //or
-            builder.RegisterAssemblyModules<ParentChildModule>(typeof(Program).Assembly);
-            var container = builder.Build();
-            Console.WriteLine(container.Resolve<Child>().Parent);
-        }
+            builder.RegisterType<ConsoleLog>();
+            builder.RegisterType<Reporting>();
+            using(var c = builder.Build())
+            {
+                c.Resolve<Reporting>().Report();
+            }
 
+
+        }
+        #region registration concepts
         static void Main_Module()
         {
             //https://www.udemy.com/di-ioc-dotnet/learn/v4/t/lecture/6456212?start=0
@@ -74,8 +76,6 @@ namespace Autofac_Samples
                 .As(t => t.GetInterfaces()[0]);  //get the first interface of the type
             Console.ReadLine();
         }
-
-
         static void Main_Parameter_AtResolution()
         {
             var builder = new ContainerBuilder();            
@@ -177,11 +177,12 @@ namespace Autofac_Samples
             car.Go();
             Console.ReadLine();
         }
+        #endregion
         /// <summary>
         /// the pre-autofac main method
         /// </summary>
         /// <returns></returns>
-        public static void Main_Old()
+        public static void Main_Without_Containers()
         {
             var log = new ConsoleLog();
             var engine = new Engine(log);
@@ -191,7 +192,7 @@ namespace Autofac_Samples
         /// <summary>
         /// non-DI implementation
         /// </summary>
-        public interface ILog
+        public interface ILog : IDisposable
         {
             void Write(string message);
         }
@@ -206,6 +207,11 @@ namespace Autofac_Samples
             {
                 Console.WriteLine(message);
             }
+
+            public void Dispose()
+            {
+                Console.WriteLine("Console logger no longer required");
+            }
         }
 
         public class EmailLog : ILog
@@ -215,6 +221,10 @@ namespace Autofac_Samples
             public void Write(string message)
             {
                 Console.WriteLine($"Email sent to {adminEmail} : {message}");
+            }
+            public void Dispose()
+            {
+                Console.WriteLine("Console logger no longer required");
             }
         }
 
@@ -229,6 +239,27 @@ namespace Autofac_Samples
             public void Write(string message)
             {
                 Console.WriteLine($"SMS sent to {phoneNumber} : {message}");
+            }
+            public void Dispose()
+            {
+                Console.WriteLine("Console logger no longer required");
+            }
+        }
+        public class Reporting
+        {
+            Lazy<Program.ConsoleLog> log;
+            public Reporting(Lazy<Program.ConsoleLog> log)
+            {
+                if (log == null)
+                {
+                    throw new ArgumentNullException(paramName: nameof(log));
+                }
+                this.log = log;
+                Console.WriteLine("Reporting component created");
+            }
+            public void Report()
+            {
+                log.Value.Write("Log started");
             }
         }
         public class Engine
