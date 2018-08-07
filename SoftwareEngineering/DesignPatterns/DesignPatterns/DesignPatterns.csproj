@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -41,31 +41,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class1.cs" />
-    <Compile Include="CreationalPatterns\AbstractFactory\WidgetFactory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SOLID\SingleResponsibilityPrinciple.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="BehavioralPatterns\ChainResponsibility\" />
-    <Folder Include="BehavioralPatterns\Command\" />
-    <Folder Include="BehavioralPatterns\Interpreter\" />
-    <Folder Include="BehavioralPatterns\Iterator\" />
-    <Folder Include="BehavioralPatterns\Mediator\" />
-    <Folder Include="BehavioralPatterns\Memento\" />
-    <Folder Include="BehavioralPatterns\Observer\" />
-    <Folder Include="BehavioralPatterns\State\" />
-    <Folder Include="BehavioralPatterns\Strategy\" />
-    <Folder Include="BehavioralPatterns\TemplateMethod\" />
-    <Folder Include="BehavioralPatterns\Visitor\" />
-    <Folder Include="CreationalPatterns\BuilderPattern\" />
-    <Folder Include="CreationalPatterns\FactoryMethod\" />
-    <Folder Include="CreationalPatterns\PrototypePattern\" />
-    <Folder Include="StructuralPatterns\AdapterPatterns\" />
-    <Folder Include="StructuralPatterns\BridgePattern\" />
-    <Folder Include="StructuralPatterns\Composite\" />
-    <Folder Include="StructuralPatterns\Decorator\" />
-    <Folder Include="StructuralPatterns\Facade\" />
-    <Folder Include="StructuralPatterns\Flyweight\" />
-    <Folder Include="StructuralPatterns\Proxy\" />
+    <Folder Include="SOLID\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
