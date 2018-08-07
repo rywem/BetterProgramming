@@ -21,9 +21,9 @@ namespace MasterUnitTesting
                 // libclass.Warnings();
                 #endregion
 
-                UnitTestsLibrary.BankAccountTests accountTests = new UnitTestsLibrary.BankAccountTests();
-                accountTests.BankAccountShouldThrowOnNonPositiveDeposit();
-                //accountTests.BankAccountShouldIncreaseOnPositiveDeposit();
+                //MasterUnitTestLibrary.UnitTests.BankAccountTests accountTests = new MasterUnitTestLibrary.UnitTests.BankAccountTests();
+                //accountTests.BankAccountShouldThrowOnNonPositiveDeposit();
+                //accountTests.BankAccountShouldIncreaseOnPositiveDeposit();                
             }
             catch (Exception ex) 
             {

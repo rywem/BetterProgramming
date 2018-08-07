@@ -1,7 +1,7 @@
 ﻿using System;
 using NUnit.Framework;
 
-namespace UnitTestsLibrary
+namespace UnitTestsLibrary.UnitTests
 {
     /// <summary>
     /// The demo application for Unit Tests

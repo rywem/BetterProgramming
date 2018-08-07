@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="..\packages\NUnit.3.10.1\build\NUnit.props" Condition="Exists('..\packages\NUnit.3.10.1\build\NUnit.props')" />
   <PropertyGroup>
@@ -8,7 +8,8 @@
     <OutputType>Exe</OutputType>
     <RootNamespace>MasterUnitTesting</RootNamespace>
     <AssemblyName>MasterUnitTesting</AssemblyName>
-    <TargetFrameworkVersion>v4.7</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
     <DebugSymbols>true</DebugSymbols>
@@ -40,9 +41,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\UnitTestsLibrary\UnitTestsLibrary.csproj">
-      <Project>{FAED345C-489F-4B6D-A2FF-78E81D1E4ACB}</Project>
-      <Name>UnitTestsLibrary</Name>
+    <ProjectReference Include="..\MasterUnitTestLibrary\MasterUnitTestLibrary.csproj">
+      <Project>{a3709009-32c6-4658-82cf-4d7beef4308c}</Project>
+      <Name>MasterUnitTestLibrary</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\LearnFuncsActionsPreds\LearnFuncsActionsPreds.csproj">
       <Project>{CA0E1D92-6000-4F2C-9DEB-D67CDACC48A0}</Project>
@@ -50,6 +51,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <None Include="app.config" />
     <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
