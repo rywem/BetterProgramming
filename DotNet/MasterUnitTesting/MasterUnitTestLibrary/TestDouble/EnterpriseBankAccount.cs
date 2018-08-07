@@ -64,8 +64,9 @@ namespace MasterUnitTestLibrary.TestDouble
         [Test]
         public void Deposit_UnitTestWithFake()
         {
-            // note, this is an unit test
+            // note, this is an unit test with a null pattern
             // this is a unit test because we've isolated the log object into a null class.
+            // note, this (the null pattern) isn't scalable 
             bankAccount = new EnterpriseBankAccount(new NullLog()) { Balance = 100 };
             bankAccount.Deposit(100);
             Assert.That(bankAccount.Balance, Is.EqualTo(200));
