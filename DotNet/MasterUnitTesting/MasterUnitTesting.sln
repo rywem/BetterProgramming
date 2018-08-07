@@ -1,13 +1,12 @@
-
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2012
+# Visual Studio 15
+VisualStudioVersion = 15.0.27703.2047
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MasterUnitTesting", "MasterUnitTesting\MasterUnitTesting.csproj", "{609E4C61-81A3-4DC5-B786-958CA7B0D2EA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTestsLibrary", "UnitTestsLibrary\UnitTestsLibrary.csproj", "{FAED345C-489F-4B6D-A2FF-78E81D1E4ACB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UnitTestsLibrary", "UnitTestsLibrary\UnitTestsLibrary.csproj", "{FAED345C-489F-4B6D-A2FF-78E81D1E4ACB}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LearnFuncsActionsPreds", "..\LearnFuncsActionsPreds\LearnFuncsActionsPreds.csproj", "{CA0E1D92-6000-4F2C-9DEB-D67CDACC48A0}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StandardHelperLibrary", "..\Helpers\StandardHelperLibrary\StandardHelperLibrary\StandardHelperLibrary.csproj", "{5E005BF4-7115-458C-B0E2-5628FA9D79FF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,9 +26,11 @@ Global
 		{CA0E1D92-6000-4F2C-9DEB-D67CDACC48A0}.Debug|x86.Build.0 = Debug|Any CPU
 		{CA0E1D92-6000-4F2C-9DEB-D67CDACC48A0}.Release|x86.ActiveCfg = Release|Any CPU
 		{CA0E1D92-6000-4F2C-9DEB-D67CDACC48A0}.Release|x86.Build.0 = Release|Any CPU
-		{5E005BF4-7115-458C-B0E2-5628FA9D79FF}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{5E005BF4-7115-458C-B0E2-5628FA9D79FF}.Debug|x86.Build.0 = Debug|Any CPU
-		{5E005BF4-7115-458C-B0E2-5628FA9D79FF}.Release|x86.ActiveCfg = Release|Any CPU
-		{5E005BF4-7115-458C-B0E2-5628FA9D79FF}.Release|x86.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {BDA22829-DFCB-4115-A848-E08FED44006E}
 	EndGlobalSection
 EndGlobal
