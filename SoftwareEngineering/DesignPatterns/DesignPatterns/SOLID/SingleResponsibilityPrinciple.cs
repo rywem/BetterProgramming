@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 
 namespace DesignPatterns.SOLID
 {
@@ -23,6 +24,24 @@ namespace DesignPatterns.SOLID
         {
             return string.Join(Environment.NewLine, entries);
         }
+
+
+    }
+    /// <summary>
+    /// concern: saving persistence
+    /// </summary>
+    public class Persistance
+    {
+        public void Save(Journal journal, string filename, bool overwrite = false)
+        {
+            if(overwrite || !File.Exists(filename))
+               File.WriteAllText(filename, journal.ToString());     
+        }
+
+        public static Journal Load(Uri uri)
+        {
+
+        }        
     }
 
 
