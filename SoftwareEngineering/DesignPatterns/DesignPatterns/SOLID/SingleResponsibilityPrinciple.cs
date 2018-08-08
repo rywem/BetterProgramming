@@ -44,5 +44,15 @@ namespace DesignPatterns.SOLID
         }        
     }
 
+    public class SRunner
+    {
+        public void Run() 
+        {
+             var journal = new DesignPatterns.SOLID.Journal();
+            journal.AddEntry("I wrote code today");
+            journal.AddEntry("I drank coffee today");
+            Console.WriteLine(journal);
+        }
+    }
 
 }

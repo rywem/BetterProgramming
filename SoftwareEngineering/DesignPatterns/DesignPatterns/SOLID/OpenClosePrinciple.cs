@@ -125,7 +125,7 @@ namespace DesignPatterns.SOLID
         }
     }
 
-    public class Runner
+    public class ORunner
     {
         public void Run()
         {

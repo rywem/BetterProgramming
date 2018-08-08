@@ -11,7 +11,9 @@ namespace DesignPatternsConsole
             //journal.AddEntry("I drank coffee today");
             //Console.WriteLine(journal);
 
-            var runner = new DesignPatterns.SOLID.Runner();
+            //var runner = new DesignPatterns.SOLID.ORunner();
+            //runner.Run();
+            var runner = new DesignPatterns.SOLID.LRunner();
             runner.Run();
         }
     }
