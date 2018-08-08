@@ -40,7 +40,7 @@ namespace DesignPatterns.SOLID
 
         public static Journal Load(Uri uri)
         {
-
+            return null;
         }        
     }
 

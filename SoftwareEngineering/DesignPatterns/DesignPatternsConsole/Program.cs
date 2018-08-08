@@ -6,10 +6,13 @@ namespace DesignPatternsConsole
     {
         public static void Main(string[] args)
         {
-            var journal = new DesignPatterns.SOLID.Journal();
-            journal.AddEntry("I wrote code today");
-            journal.AddEntry("I drank coffee today");
-            Console.WriteLine(journal);
+            //var journal = new DesignPatterns.SOLID.Journal();
+            //journal.AddEntry("I wrote code today");
+            //journal.AddEntry("I drank coffee today");
+            //Console.WriteLine(journal);
+
+            var runner = new DesignPatterns.SOLID.Runner();
+            runner.Run();
         }
     }
 }
