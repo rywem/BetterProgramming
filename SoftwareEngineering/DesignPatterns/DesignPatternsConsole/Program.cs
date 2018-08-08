@@ -13,8 +13,8 @@ namespace DesignPatternsConsole
 
             //var runner = new DesignPatterns.SOLID.ORunner();
             //runner.Run();
-            var runner = new DesignPatterns.SOLID.LRunner();
-            runner.Run();
+            //var runner = new DesignPatterns.SOLID.DRunner();
+            DesignPatterns.SOLID.DRunner.Run();
         }
     }
 }
