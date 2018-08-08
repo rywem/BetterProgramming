@@ -77,6 +77,42 @@ namespace DesignPatterns.SOLID
         }
     }
 
+    public class SizeSpecification : ISpecification<Product>
+    {
+        private Size size;
+        public SizeSpecification(Size size)
+        {
+            this.size = size;
+        }
+
+        public bool IsSatisfied(Product t)
+        {
+            return t.Size == size;
+        }
+    }
+
+    public class AndSpecification<T> : ISpecification<T>
+    {
+
+        private ISpecification<T> first, second;
+        public AndSpecification(ISpecification<T> first, ISpecification<T> second)
+        {
+            if (first == null)
+                throw new ArgumentNullException(paramName: nameof(first));
+            if (second == null)
+                throw new ArgumentNullException(paramName: nameof(second));
+
+            this.first = first;
+            this.second = second;
+        }
+
+        public bool IsSatisfied(T t)
+        {
+            return first.IsSatisfied(t) && second.IsSatisfied(t);
+        }
+
+    }
+
     public class BetterFilter : IFilter<Product>
     {
         public IEnumerable<Product> Filter(IEnumerable<Product> items, ISpecification<Product> spec)
@@ -104,7 +140,7 @@ namespace DesignPatterns.SOLID
 
             foreach (var p in productFilter.FilterByColor(products, Color.Green))
             {
-               // Console.WriteLine($" - {p.Name} is green");
+                Console.WriteLine($" - {p.Name} is green");
             }
 
             var betterFilter = new BetterFilter();
@@ -112,6 +148,15 @@ namespace DesignPatterns.SOLID
             foreach (var p in betterFilter.Filter(products, new ColorSpecification(Color.Green)))
             {
                 Console.WriteLine($" - {p.Name} is green");
+            }
+
+            Console.WriteLine("Blue and Large products");
+
+            foreach (var p in betterFilter.Filter(
+                products, 
+                new AndSpecification<Product>(new ColorSpecification(Color.Blue), new SizeSpecification(Size.Large))))
+            {
+                Console.WriteLine($" - {p.Name} is Blue and Large");
             }
         }
     }
