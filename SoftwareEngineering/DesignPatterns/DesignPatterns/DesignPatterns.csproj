@@ -50,6 +50,7 @@
     <Compile Include="SOLID\LiskovSubstitutionPrinciple.cs" />
     <Compile Include="SOLID\InterfaceSegregationPrinciple.cs" />
     <Compile Include="SOLID\DependencyInversionPrinciple.cs" />
+    <Compile Include="Builder.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="SOLID\" />
