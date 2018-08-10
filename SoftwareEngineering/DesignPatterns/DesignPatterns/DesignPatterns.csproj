@@ -50,10 +50,12 @@
     <Compile Include="SOLID\LiskovSubstitutionPrinciple.cs" />
     <Compile Include="SOLID\InterfaceSegregationPrinciple.cs" />
     <Compile Include="SOLID\DependencyInversionPrinciple.cs" />
-    <Compile Include="Builder.cs" />
+    <Compile Include="Builder\Builder.cs" />
+    <Compile Include="Builder\FluentBuilder.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="SOLID\" />
+    <Folder Include="Builder\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

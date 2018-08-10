@@ -15,8 +15,11 @@ namespace DesignPatternsConsole
             //runner.Run();
             //var runner = new DesignPatterns.SOLID.DRunner();
             //DesignPatterns.SOLID.DRunner.Run();
-            DesignPatterns.Builder builder = new DesignPatterns.Builder();
-            builder.Run();
+            //DesignPatterns.Builder.Builder builder = new DesignPatterns.Builder.Builder();
+            //builder.Run();
+
+            DesignPatterns.Builder.Fluent.FluentBuilder fluent = new DesignPatterns.Builder.Fluent.FluentBuilder();
+            fluent.Run();
         }
     }
 }
