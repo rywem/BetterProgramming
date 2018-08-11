@@ -13,9 +13,7 @@ namespace BusinessLib.Fundamentals
         public bool CanBeCancelledBy(User user)
         {
             return (user.IsAdmin == true || MadeBy == user);
-            
         }
-
     }
 
     public class User

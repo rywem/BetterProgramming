@@ -1,13 +1,13 @@
 ﻿using System;
 using BusinessLib.Fundamentals;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+using NUnit.Framework;
 
 namespace BusinessLib.UnitTests
 {
-    [TestClass]
+    [TestFixture]
     public class ReservationTests
     {
-        [TestMethod]
+        [Test]
         public void CanBeCanceledBy_UserIsAdmin_ReturnsTrue()
         {
             // arrage 
@@ -18,7 +18,7 @@ namespace BusinessLib.UnitTests
             Assert.IsTrue(result);
         }
 
-        [TestMethod]
+        [Test]
         public void CanBeCanceledBy_SameUserCancellingReservation_ReturnTrue()
         {
             var user = new User();
@@ -28,7 +28,7 @@ namespace BusinessLib.UnitTests
             Assert.IsTrue(result);
         }
 
-        [TestMethod]
+        [Test]
         public void CanBeCancelledBy_AnotherUserCancellingReservation_ReturnFalse()
         {
             var reservation = new Reservation() { MadeBy = new User() };
