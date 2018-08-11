@@ -8,3 +8,5 @@ A repository for learning and improving with the capabilities of .NET
     1. I highly recommend taking these course, the code alone will not sufficiently describe these .NET features.
 5. [MVC](MVC) - study of MVC in .net
 6. [MasterUnitTesting](./MasterUnitTesting) - a workspace to learn more about test driven development. Based upon the Udemy course [Master C# NUnit and Moq](https://www.udemy.com/nunit-moq/learn/)
+7. [Caching](./Caching) - caching examples
+8. [UnitTestMosh](./UnitTestMosh) - another series for learning unit tests
