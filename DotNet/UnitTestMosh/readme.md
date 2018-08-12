@@ -1,3 +1,8 @@
+
+
+## Quick Reference
+1. Testing void methods,  see [ErrorLogger](./BusinessLib/Fundamentals/ErrorLogger.cs) and [ErrorLoggerTests] 
+
 ## Packages
 
 - install-package NUnit -Version 3.8.1
