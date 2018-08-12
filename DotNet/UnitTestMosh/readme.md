@@ -1,7 +1,7 @@
 
 
 ## Quick Reference
-1. Testing void methods,  see [ErrorLogger](./BusinessLib/Fundamentals/ErrorLogger.cs) and [ErrorLoggerTests] 
+1. Testing void methods,  see [ErrorLogger](./BusinessLib/Fundamentals/ErrorLogger.cs) and [ErrorLoggerTests](./BusinessLib.UnitTests/ErrorLoggerTests.cs)
 
 ## Packages
 
