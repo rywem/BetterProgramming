@@ -7,4 +7,5 @@ A repository for learning and improving with the capabilities of .NET
 4. [Learn_PLINQ_Async_Tasks](Learn_PLINQ_Async_Tasks) - A project to improve skills relating to asynchronous, parallel processing, and PLINQ. This is based on the Udemy course [Write Asynchronous C# Code With Tasks and PLINQ](https://www.udemy.com/write-asynchronous-csharp-code-with-task-parallel-library-and-plinq/) by [Mark Farragher](https://www.udemy.com/user/markfarragher/)
     1. I highly recommend taking these course, the code alone will not sufficiently describe these .NET features.
 5. [MVC](MVC) - study of MVC in .net
-6. [MasterUnitTesting](./MasterUnitTesting) - a workspace to learn more about test driven development. Based upon the Udemy course [Master C# NUnit and Moq](https://www.udemy.com/nunit-moq/learn/)
+6. [UnitTests](./UnitTests) - A section for mastering unit testing.
+7. [Caching](./Caching) - caching examples
