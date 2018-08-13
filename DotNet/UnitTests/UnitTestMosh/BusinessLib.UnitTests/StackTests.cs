@@ -11,6 +11,20 @@ namespace BusinessLib.UnitTests
     public class StackTests
     {
         [Test]
+        public void Push_ArgIsNull_ThrowsArgNullException()
+        {
+            BusinessLib.Fundamentals.Stack<string> stack = new BusinessLib.Fundamentals.Stack<string>();
+            Assert.That(() => stack.Push(null), Throws.ArgumentNullException);
+        }
+
+        [Test]
+        public void Pop_EmptyStack_ThrowsInvalidOperationException()
+        {
+            var stack = new BusinessLib.Fundamentals.Stack<string>();
+            Assert.That(() => stack.Pop(), Throws.InvalidOperationException);
+        }
+
+        [Test]
         public void Push_Add2Numbers_Returns2Count()
         {
             BusinessLib.Fundamentals.Stack<int> stack = new BusinessLib.Fundamentals.Stack<int>();
