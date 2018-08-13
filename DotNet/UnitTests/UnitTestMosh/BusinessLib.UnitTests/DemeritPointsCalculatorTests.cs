@@ -31,8 +31,10 @@ namespace BusinessLib.UnitTests
             Assert.That(result, Is.EqualTo(0));
         }
         [Test]
+        [TestCase(66, 0)]
         [TestCase(70, 1)]
         [TestCase(71, 1)]
+        [TestCase(74, 1)]
         [TestCase(75, 2)]
         public void CalculateDemeritPoints_GreatThanSpeedLimit_ReturnsDemerits(int speed, int expectedResult)
         {
