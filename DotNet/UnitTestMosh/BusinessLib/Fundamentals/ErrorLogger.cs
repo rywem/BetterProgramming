@@ -10,7 +10,7 @@ namespace BusinessLib.Fundamentals
     {
         public string LastError { get; set; }
         public event EventHandler<Guid> ErrorLogged;
-
+        //write tests for the public method
         public void Log(string error)
         {
 
@@ -20,8 +20,13 @@ namespace BusinessLib.Fundamentals
             LastError = error;
             // write the log to a storage
             // ...
-
-            ErrorLogged?.Invoke(this, Guid.NewGuid());
+            OnErrorLogged(Guid.NewGuid());
+            
+        }
+        //don't write tests for this method
+        protected virtual void OnErrorLogged(Guid errorId)
+        {
+            ErrorLogged?.Invoke(this, errorId);
         }
     }
 }
