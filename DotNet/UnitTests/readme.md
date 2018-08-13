@@ -20,3 +20,9 @@ Assert.That(result, Is.Unique); //checks that there aren't any duplicates
 StringAssert.StartsWith("hello", result);
 Assert.That(result, Is.EqualTo("hello"));
 ```
+3. Test exception(s) thrown
+```
+Assert.That(() => logger.Log(error), Throws.ArgumentNullException);
+Assert.That(() => _calculator.CalculateDemeritPoints(-1), Throws.Exception.TypeOf<ArgumentOutOfRangeException>());
+var ex = Assert.Throws<ArgumentException>(() => Account.Deposit(-1));
+```
