@@ -52,6 +52,7 @@
     <Compile Include="SOLID\DependencyInversionPrinciple.cs" />
     <Compile Include="Builder\Builder.cs" />
     <Compile Include="Builder\FluentBuilder.cs" />
+    <Compile Include="Builder\FacetedBuilder.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="SOLID\" />
