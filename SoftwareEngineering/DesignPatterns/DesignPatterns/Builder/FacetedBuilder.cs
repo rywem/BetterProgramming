@@ -23,6 +23,32 @@ namespace DesignPatterns.Builder.Faceted
         protected Person person = new Person();
 
         public PersonJobBuilder Works => new PersonJobBuilder(person);
+        public PersonAddressBuilder Lives => new PersonAddressBuilder(person);
+    }
+    public class PersonAddressBuilder : PersonBuilder
+    {
+        public PersonAddressBuilder(Person person)
+        {
+            this.person = person
+        }
+
+        public PersonAddressBuilder At(string streetAddress)
+        {
+            person.StreetAddress = streetAddress;
+            return this;
+        }
+
+        public PersonAddressBuilder WithPostcode(string postcode)
+        {
+            person.PostCode = postcode;
+            return this;
+        }
+
+        public PersonAddressBuilder In(string city)
+        {
+            person.City = city;
+            return this;
+        }
     }
 
     public class PersonJobBuilder : PersonBuilder
@@ -56,6 +82,9 @@ namespace DesignPatterns.Builder.Faceted
         {
             var personBuilder = new PersonBuilder();
             var person = personBuilder
+                .Lives.At("123 Abc street")
+                    .In("Cupertino")
+                    .WithPostcode("92222")
                 .Works.At("Acme")
                     .AsA("Developer")
                     .Earning(123000);
