@@ -45,10 +45,6 @@
       <Project>{a3709009-32c6-4658-82cf-4d7beef4308c}</Project>
       <Name>MasterUnitTestLibrary</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\LearnFuncsActionsPreds\LearnFuncsActionsPreds.csproj">
-      <Project>{CA0E1D92-6000-4F2C-9DEB-D67CDACC48A0}</Project>
-      <Name>LearnFuncsActionsPreds</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
