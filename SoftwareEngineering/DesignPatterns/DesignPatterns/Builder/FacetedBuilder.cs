@@ -24,12 +24,17 @@ namespace DesignPatterns.Builder.Faceted
 
         public PersonJobBuilder Works => new PersonJobBuilder(person);
         public PersonAddressBuilder Lives => new PersonAddressBuilder(person);
+
+        public static implicit operator Person(PersonBuilder pb)
+        {
+            return pb.person;
+        }
     }
     public class PersonAddressBuilder : PersonBuilder
     {
         public PersonAddressBuilder(Person person)
         {
-            this.person = person
+            this.person = person;
         }
 
         public PersonAddressBuilder At(string streetAddress)
@@ -81,13 +86,16 @@ namespace DesignPatterns.Builder.Faceted
         public void Run()
         {
             var personBuilder = new PersonBuilder();
-            var person = personBuilder
+            //note, this is an implicit cast
+            Person person = personBuilder
                 .Lives.At("123 Abc street")
                     .In("Cupertino")
                     .WithPostcode("92222")
                 .Works.At("Acme")
                     .AsA("Developer")
                     .Earning(123000);
+
+            Console.WriteLine(person);
         }
     }
 }
