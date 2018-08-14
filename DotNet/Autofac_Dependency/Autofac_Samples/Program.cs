@@ -41,7 +41,7 @@ namespace Autofac_Samples
         static void Main_Controlled_Instantiation(string[] args)
         {
             //controlled instantiation
-            //https://www.udemy.com/di-ioc-dotnet/learn/v4/t/lecture/6560422?start=0
+            //https://www.udemy.com/di-ioc-dotnet/learn/v4/t/lecture/6564488?start=0
             var builder = new ContainerBuilder();
             builder.RegisterType<ConsoleLog>();
             builder.RegisterType<OwnedReporting>();

@@ -22,6 +22,7 @@ namespace DesignPatterns.Builder.Faceted
         //reference
         protected Person person = new Person();
 
+        public PersonJobBuilder Works => new PersonJobBuilder(person);
     }
 
     public class PersonJobBuilder : PersonBuilder
@@ -53,7 +54,11 @@ namespace DesignPatterns.Builder.Faceted
     {
         public void Run()
         {
-            
+            var personBuilder = new PersonBuilder();
+            var person = personBuilder
+                .Works.At("Acme")
+                    .AsA("Developer")
+                    .Earning(123000);
         }
     }
 }
