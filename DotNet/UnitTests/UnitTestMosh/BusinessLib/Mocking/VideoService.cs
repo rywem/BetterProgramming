@@ -10,9 +10,24 @@ namespace BusinessLib.Mocking
 {
     public class VideoService
     {
+        public IFileReader _fileReader { get; set; }
         public string ReadVideoTitle(IFileReader fileReader)
         {
             var str = fileReader.Read("video.txt");
+            var video = Newtonsoft.Json.JsonConvert.DeserializeObject<Video>(str);
+            if (video == null)
+                return "Error parsing the video";
+
+            return video.Title;
+        }
+
+        public VideoService(IFileReader reader = null)
+        {
+            _fileReader = reader ?? new FileReader();
+        }
+        public string ReadVideoTitleProp()
+        {
+            var str = _fileReader.Read("video.txt");
             var video = Newtonsoft.Json.JsonConvert.DeserializeObject<Video>(str);
             if (video == null)
                 return "Error parsing the video";

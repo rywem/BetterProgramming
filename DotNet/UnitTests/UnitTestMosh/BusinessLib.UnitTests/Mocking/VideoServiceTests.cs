@@ -12,10 +12,19 @@ namespace BusinessLib.UnitTests.Mocking
     public class VideoServiceTests
     {
         [Test]
-        public void ReadVideoTitle_EmptyFile_ReturnError()
+        public void ReadVideoTitle_EmptyFileConstructor_ReturnError()
         {
             var service = new VideoService();
-            service.ReadVideoTitle(new FakeFileReader());
+            var result = service.ReadVideoTitle(new FakeFileReader());
+            Assert.That(result, Does.Contain("error").IgnoreCase);
+        }
+
+        [Test]
+        public void ReadVideoTitle_EmptyFileProp_ReturnError()
+        {
+            var service = new VideoService();
+            service._fileReader = new FakeFileReader();
+            var result = service.ReadVideoTitleProp();
             Assert.That(result, Does.Contain("error").IgnoreCase);
         }
     }
