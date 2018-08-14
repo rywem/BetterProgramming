@@ -18,8 +18,11 @@ namespace DesignPatternsConsole
             //DesignPatterns.Builder.Builder builder = new DesignPatterns.Builder.Builder();
             //builder.Run();
 
-            DesignPatterns.Builder.Fluent.FluentBuilder fluent = new DesignPatterns.Builder.Fluent.FluentBuilder();
-            fluent.Run();
+            //DesignPatterns.Builder.Fluent.FluentBuilder fluent = new DesignPatterns.Builder.Fluent.FluentBuilder();
+            //fluent.Run();
+
+            DesignPatterns.Builder.Faceted.FacetedBuilder faceted = new DesignPatterns.Builder.Faceted.FacetedBuilder();
+            faceted.Run();
         }
     }
 }
