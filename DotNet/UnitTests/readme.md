@@ -3,10 +3,8 @@
 2. [UnitTestMosh](./UnitTestMosh) - another series for learning unit tests. [Unit Testing in C#](./https://www.udemy.com/unit-testing-csharp/learn/v4/) by Mosh Hamedani.
 
 ## Packages
-
 - install-package NUnit -Version 3.8.1
 - install-package NUnit3TestAdapter -Version 3.8.0
-
 
 ## Quick reference
 1. Different approaches for asserting values in an array exist.  
@@ -31,3 +29,7 @@ Assert.That(() => logger.Log(error), Throws.ArgumentNullException);
 Assert.That(() => _calculator.CalculateDemeritPoints(-1), Throws.Exception.TypeOf<ArgumentOutOfRangeException>());
 var ex = Assert.Throws<ArgumentException>(() => Account.Deposit(-1));
 ```
+
+
+## Links
+- Moq [Quickstart](https://github.com/Moq/moq4/wiki/Quickstart)

@@ -1,4 +1,5 @@
 ﻿using BusinessLib.Mocking;
+using Moq;
 using NUnit.Framework;
 using System;
 using System.Collections.Generic;
@@ -11,21 +12,25 @@ namespace BusinessLib.UnitTests.Mocking
     [TestFixture]
     public class VideoServiceTests
     {
-        [Test]
-        public void ReadVideoTitle_EmptyFileConstructor_ReturnError()
+        VideoService _service;
+        Mock<IFileReader> _mockFileReader;
+
+        [SetUp]
+        public void SetUp()
         {
-            var service = new VideoService();
-            var result = service.ReadVideoTitle(new FakeFileReader());
+            _service = new VideoService();
+            _mockFileReader = new Mock<IFileReader>();
+        }
+    
+
+        
+        [Test]
+        public void ReadVideoTitle_EmptyFile_ReturnError()
+        {
+            _mockFileReader.Setup(fr => fr.Read("video.txt")).Returns("");
+            var result = _service.ReadVideoTitle(_mockFileReader.Object);
             Assert.That(result, Does.Contain("error").IgnoreCase);
         }
 
-        [Test]
-        public void ReadVideoTitle_EmptyFileProp_ReturnError()
-        {
-            var service = new VideoService();
-            service._fileReader = new FakeFileReader();
-            var result = service.ReadVideoTitleProp();
-            Assert.That(result, Does.Contain("error").IgnoreCase);
-        }
     }
 }
