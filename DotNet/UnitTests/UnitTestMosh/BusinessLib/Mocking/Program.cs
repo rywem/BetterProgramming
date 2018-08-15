@@ -10,8 +10,8 @@ namespace BusinessLib.Mocking
     {
         static void Main(string[] args)
         {
-            var service = new VideoService();
-            var title = service.ReadVideoTitle(new FileReader());
+            //var service = new VideoService();
+            //var title = service.ReadVideoTitle(new FileReader());
             //var title = service.ReadVideoTitle();
         }
     }
