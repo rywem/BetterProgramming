@@ -53,10 +53,12 @@
     <Compile Include="Builder\Builder.cs" />
     <Compile Include="Builder\FluentBuilder.cs" />
     <Compile Include="Builder\FacetedBuilder.cs" />
+    <Compile Include="Factories\Factory.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="SOLID\" />
     <Folder Include="Builder\" />
+    <Folder Include="Factories\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
