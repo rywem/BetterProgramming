@@ -35,16 +35,20 @@ namespace BusinessLib.UnitTests.Mocking
         [Test]
         public void GetUnprocessedVideosAsCsv_AllVideosAreProcessed_JoinVideos()
         {
-            _mockVideoRepository.Setup(vr => vr.GetUnprocessedVideos()).Returns((new List<Video>()).AsEnumerable());
+            _mockVideoRepository.Setup(vr => vr.GetUnprocessedVideos()).Returns(new List<Video>());
             var result = _service.GetUnprocessedVideoAsCsv();
             Debug.Write(result);
             Assert.That(result, Is.EqualTo(string.Empty));
         }
 
         [Test]
-        public void GetUnprocessedVideosAsCsv_VideosNeedProcessing_JoinVideos()
+        public void GetUnprocessedVideosAsCsv_AFewVideosNeedProcessing_JoinVideos()
         {
-            _mockVideoRepository.Setup(vr => vr.GetUnprocessedVideos()).Returns((new List<Video>() { new Video() { Id = 1 }, new Video() { Id = 2 } }).AsEnumerable());
+            _mockVideoRepository.Setup(vr => vr.GetUnprocessedVideos()).Returns(new List<Video>()
+            {
+                new Video() { Id = 1 },
+                new Video() { Id = 2 }
+            });
             var result = _service.GetUnprocessedVideoAsCsv();
             Debug.Write(result);
             Assert.That(result, Is.EqualTo("1,2"));
