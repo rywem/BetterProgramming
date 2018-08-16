@@ -3,6 +3,7 @@ using Moq;
 using NUnit.Framework;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,15 +15,14 @@ namespace BusinessLib.UnitTests.Mocking
     {
         VideoService _service;
         Mock<IFileReader> _mockFileReader;
-
+        Mock<IVideoRepository> _mockVideoRepository;
         [SetUp]
         public void SetUp()
         {
-            _service = new VideoService();
             _mockFileReader = new Mock<IFileReader>();
+            _mockVideoRepository = new Mock<IVideoRepository>();
+            _service = new VideoService(_mockFileReader.Object, _mockVideoRepository.Object);
         }
-    
-
         
         [Test]
         public void ReadVideoTitle_EmptyFile_ReturnError()
@@ -32,5 +32,26 @@ namespace BusinessLib.UnitTests.Mocking
             Assert.That(result, Does.Contain("error").IgnoreCase);
         }
 
+        [Test]
+        public void GetUnprocessedVideosAsCsv_AllVideosAreProcessed_JoinVideos()
+        {
+            _mockVideoRepository.Setup(vr => vr.GetUnprocessedVideos()).Returns(new List<Video>());
+            var result = _service.GetUnprocessedVideoAsCsv();
+            Debug.Write(result);
+            Assert.That(result, Is.EqualTo(string.Empty));
+        }
+
+        [Test]
+        public void GetUnprocessedVideosAsCsv_AFewVideosNeedProcessing_JoinVideos()
+        {
+            _mockVideoRepository.Setup(vr => vr.GetUnprocessedVideos()).Returns(new List<Video>()
+            {
+                new Video() { Id = 1 },
+                new Video() { Id = 2 }
+            });
+            var result = _service.GetUnprocessedVideoAsCsv();
+            Debug.Write(result);
+            Assert.That(result, Is.EqualTo("1,2"));
+        }
     }
 }

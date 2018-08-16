@@ -11,6 +11,7 @@ namespace BusinessLib.Mocking
     public class VideoService
     {
         public IFileReader _fileReader { get; set; }
+        IVideoRepository _repository { get; set; }
         public string ReadVideoTitle(IFileReader fileReader)
         {
             var str = fileReader.Read("video.txt");
@@ -21,9 +22,10 @@ namespace BusinessLib.Mocking
             return video.Title;
         }
 
-        public VideoService(IFileReader reader = null)
+        public VideoService(IFileReader reader = null, IVideoRepository repository = null)
         {
             _fileReader = reader ?? new FileReader();
+            _repository = repository ?? new VideoRepository();
         }
         public string ReadVideoTitleProp()
         {
@@ -39,18 +41,13 @@ namespace BusinessLib.Mocking
         {
             var videoIds = new List<int>();
 
-            using (var context = new VideoContext())
+            var videos = _repository.GetUnprocessedVideos();
+            foreach (var v in videos)
             {
-                var videos = (from video in context.Videos
-                              where !video.IsProcessed
-                              select video).ToList();
-
-                foreach (var v in videos)
-                {
-                    videoIds.Add(v.Id);
-                }
-                return string.Join(",", videoIds);
+                videoIds.Add(v.Id);
             }
+            return string.Join(",", videoIds);
+            
         }
     }
 
