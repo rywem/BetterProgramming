@@ -44,7 +44,7 @@ namespace DesignPatterns.Factories
     {
         public void Run()
         {
-            var point = Factory.NewPolarPoint(1.0, Math.PI / 2);
+            var point = Point.Factory.NewPolarPoint(1.0, Math.PI / 2);
             Console.WriteLine(point);
         }
     }

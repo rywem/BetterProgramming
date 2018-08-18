@@ -21,8 +21,10 @@ namespace DesignPatternsConsole
             //DesignPatterns.Builder.Fluent.FluentBuilder fluent = new DesignPatterns.Builder.Fluent.FluentBuilder();
             //fluent.Run();
 
-            DesignPatterns.Builder.Faceted.FacetedBuilder faceted = new DesignPatterns.Builder.Faceted.FacetedBuilder();
-            faceted.Run();
+            //DesignPatterns.Builder.Faceted.FacetedBuilder faceted = new DesignPatterns.Builder.Faceted.FacetedBuilder();
+            //faceted.Run();
+            DesignPatterns.Factories.AbstractFactory abstractFactory = new DesignPatterns.Factories.AbstractFactory();
+            abstractFactory.Run();
         }
     }
 }

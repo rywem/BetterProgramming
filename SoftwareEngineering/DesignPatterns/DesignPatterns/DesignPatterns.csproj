@@ -54,6 +54,7 @@
     <Compile Include="Builder\FluentBuilder.cs" />
     <Compile Include="Builder\FacetedBuilder.cs" />
     <Compile Include="Factories\Factory.cs" />
+    <Compile Include="Factories\AbstractFactory.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="SOLID\" />
