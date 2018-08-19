@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -34,6 +34,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\DesignPatternsVB\DesignPatternsVB.vbproj">
+      <Project>{be042170-dafd-45c9-b604-8a39b15ca88e}</Project>
+      <Name>DesignPatternsVB</Name>
+    </ProjectReference>
     <ProjectReference Include="..\DesignPatterns\DesignPatterns.csproj">
       <Project>{DE579BD8-0E81-4BEF-A866-D9F44590D9AB}</Project>
       <Name>DesignPatterns</Name>

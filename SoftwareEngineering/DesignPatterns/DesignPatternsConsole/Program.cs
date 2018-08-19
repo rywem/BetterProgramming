@@ -23,8 +23,13 @@ namespace DesignPatternsConsole
 
             //DesignPatterns.Builder.Faceted.FacetedBuilder faceted = new DesignPatterns.Builder.Faceted.FacetedBuilder();
             //faceted.Run();
-            DesignPatterns.Factories.AbstractFactory abstractFactory = new DesignPatterns.Factories.AbstractFactory();
-            abstractFactory.Run();
+            //DesignPatterns.Factories.AbstractFactory abstractFactory = new DesignPatterns.Factories.AbstractFactory();
+            //abstractFactory.Run();
+
+            DesignPatternsVB.Prototype prototype = new DesignPatternsVB.Prototype();
+            prototype.Run();
+
+            Console.ReadLine();
         }
     }
 }
