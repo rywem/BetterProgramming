@@ -55,11 +55,13 @@
     <Compile Include="Builder\FacetedBuilder.cs" />
     <Compile Include="Factories\Factory.cs" />
     <Compile Include="Factories\AbstractFactory.cs" />
+    <Compile Include="Prototype\Prototype.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="SOLID\" />
     <Folder Include="Builder\" />
     <Folder Include="Factories\" />
+    <Folder Include="Prototype\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
