@@ -58,10 +58,14 @@
     <Compile Include="Factories\Factory.cs" />
     <Compile Include="Factories\AbstractFactory.cs" />
     <Compile Include="Prototype\Prototype.cs" />
+    <Compile Include="Adapter\AdapterPattern.cs" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Adapter\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
