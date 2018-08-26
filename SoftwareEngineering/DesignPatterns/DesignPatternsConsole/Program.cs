@@ -26,9 +26,11 @@ namespace DesignPatternsConsole
             //DesignPatterns.Factories.AbstractFactory abstractFactory = new DesignPatterns.Factories.AbstractFactory();
             //abstractFactory.Run();
 
-            DesignPatternsVB.Prototype prototype = new DesignPatternsVB.Prototype();
-            prototype.Run();
+            //DesignPatternsVB.Prototype prototype = new DesignPatternsVB.Prototype();
+            //prototype.Run();
 
+            DesignPatterns.Adapter.AdapterPattern adapterPattern = new DesignPatterns.Adapter.AdapterPattern();
+            adapterPattern.Run();
             Console.ReadLine();
         }
     }

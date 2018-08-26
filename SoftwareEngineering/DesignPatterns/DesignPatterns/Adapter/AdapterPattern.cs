@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using static System.Console;
+using System.Linq;
+using System.Linq.Expressions;
+using MoreLinq;
 namespace DesignPatterns.Adapter
 {
     public class Point
@@ -45,7 +48,12 @@ namespace DesignPatterns.Adapter
 
     public class LineToPointAdapter : Collection<Point>
     {
-        
+        private static int count;
+
+        public LineToPointAdapter(Line line)
+        {
+            WriteLine($"{++count}: Generating points for line [{line.Start.X}, {line.Start.Y}] [{line.End.X},{line.End.Y}]");
+        }
     }
     public class AdapterPattern
     {
@@ -53,7 +61,7 @@ namespace DesignPatterns.Adapter
         {
             new VectorRectangle(1,1, 10, 10),
             new VectorRectangle(3,3,6,6)
-        }
+        };
         public void DrawPoint(Point p)
         {
             if (p == null)
@@ -62,6 +70,22 @@ namespace DesignPatterns.Adapter
             }
 
             Write(".");
+        }
+
+        public void Run()
+        {
+            foreach (var vo in vectorObjects)
+            {
+                foreach (var line in vo)
+                {
+                    var adapter = new LineToPointAdapter(line);
+                    adapter.ForEach(DrawPoint);
+                    //foreach (var a in adapter.ToList())
+                    //{
+                    //    DrawPoint(a);
+                    //}
+                }
+            }
         }
     }
 }
