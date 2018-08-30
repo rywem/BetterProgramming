@@ -7,6 +7,6 @@ A work for improving general ability at software engineering.
 3. [DesignPatterns](./DesignPatterns) - A project directory for learning various design patterns available in computer science.
 4. [MontyHall](./MontyHall) - An attempt to represent the MontyHall problem with code.
 5. [ProjectEuler](./ProjectEuler) - A 2016 attempt to improve personal general problem solving skills with software. Based upon [Project Euler's](https://projecteuler.net/) problem sets.
-7. [Regex](https://github.com/cybervoid/BetterProgramming/tree/master/SoftwareEngineering/Fundamentals/Regex) - a section for learning the fundamentals of regex
+7. [Regex](./Regex) - a section for learning the fundamentals of regex
 8. [WhiteboardPractice](./WhiteboardPractice) - A workspace for implementing whiteboard practice problems.
 9. [BitwiseWorkspace](./BitwiseWorkspace) - a workspace for reviewing bitwise functionality
