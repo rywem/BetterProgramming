@@ -16,6 +16,26 @@ namespace DesignPatterns.Adapter
             X = x;
             Y = y;
         }
+        protected bool Equals(Point other)
+        {
+            return X == other.X && Y == other.Y;
+        }
+
+        public override bool Equals(object obj)
+        {
+            if (ReferenceEquals(null, obj)) return false;
+            if (ReferenceEquals(this, obj)) return true;
+            if (obj.GetType() != this.GetType()) return false;
+            return Equals((Point)obj);
+        }
+
+        public override int GetHashCode()
+        {
+            unchecked
+            {
+                return (X * 397) ^ Y;
+            }
+        }
     }
 
     public class Line
@@ -29,6 +49,25 @@ namespace DesignPatterns.Adapter
                 throw new ArgumentNullException(paramName: nameof(end));
             Start = start;
             End = end;
+        }
+        protected bool Equals(Line other)
+        {
+            return Equals(Start, other.Start) && Equals(End, other.End);
+        }
+
+        public override bool Equals(object obj)
+        {
+            if (ReferenceEquals(null, obj)) return false;
+            if (ReferenceEquals(this, obj)) return true;
+            if (obj.GetType() != this.GetType()) return false;
+            return Equals((Line)obj);
+        }
+        public override int GetHashCode()
+        {
+            unchecked
+            {
+                return ((Start != null ? Start.GetHashCode() : 0) * 397) ^ (End != null ? End.GetHashCode() : 0);
+            }
         }
     }
     public class VectorObject : Collection<Line>
@@ -49,11 +88,15 @@ namespace DesignPatterns.Adapter
     public class LineToPointAdapter : Collection<Point>
     {
         private static int count = 0;
-
+        static Dictionary<int, List<Point>> cache = new Dictionary<int, List<Point>>();
         public LineToPointAdapter(Line line)
         {
+            var hash = line.GetHashCode();
+            if (cache.ContainsKey(hash))
+                return; //dont generate points, we already have them. 
             WriteLine($"{++count}: Generating points for line [{line.Start.X},{line.Start.Y}]-[{line.End.X},{line.End.Y}] (no caching)");
 
+            var points = new List<Point>();
             int left = Math.Min(line.Start.X, line.End.X);
             int right = Math.Max(line.Start.X, line.End.X);
             int top = Math.Min(line.Start.Y, line.End.Y);
@@ -65,7 +108,7 @@ namespace DesignPatterns.Adapter
             {
                 for (int y = top; y <= bottom; ++y)
                 {
-                    Add(new Point(left, y));
+                    point.Add(new Point(left, y));
                 }
             }
             else if (dy == 0)
@@ -91,7 +134,6 @@ namespace DesignPatterns.Adapter
 
         public static void Run()
         {
-            Draw();
             Draw();
         }
         private static void Draw()
