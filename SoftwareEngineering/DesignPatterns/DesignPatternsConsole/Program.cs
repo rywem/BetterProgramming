@@ -29,8 +29,9 @@ namespace DesignPatternsConsole
             //DesignPatternsVB.Prototype prototype = new DesignPatternsVB.Prototype();
             //prototype.Run();
 
-            DesignPatterns.Adapter.AdapterPattern adapterPattern = new DesignPatterns.Adapter.AdapterPattern();
-            adapterPattern.Run();
+            //DesignPatterns.Adapter.AdapterPattern adapterPattern = new DesignPatterns.Adapter.AdapterPattern();
+            //adapterPattern.Run();
+            DesignPatterns.Adapter.AdapterPattern.Run();
             Console.ReadLine();
         }
     }
