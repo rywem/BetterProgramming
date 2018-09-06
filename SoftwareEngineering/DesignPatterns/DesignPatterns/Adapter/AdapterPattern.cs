@@ -5,6 +5,8 @@ using static System.Console;
 using System.Linq;
 using System.Linq.Expressions;
 using MoreLinq;
+using System.Collections;
+
 namespace DesignPatterns.Adapter
 {
     public class Point
@@ -85,7 +87,7 @@ namespace DesignPatterns.Adapter
         }
     }
 
-    public class LineToPointAdapter : Collection<Point>
+    public class LineToPointAdapter : IEnumerable<Point>
     {
         private static int count = 0;
         static Dictionary<int, List<Point>> cache = new Dictionary<int, List<Point>>();
@@ -108,16 +110,28 @@ namespace DesignPatterns.Adapter
             {
                 for (int y = top; y <= bottom; ++y)
                 {
-                    point.Add(new Point(left, y));
+                    points.Add(new Point(left, y));
                 }
             }
             else if (dy == 0)
             {
                 for (int x = left; x <= right; ++x)
                 {
-                    Add(new Point(x, top));
+                    points.Add(new Point(x, top));
                 }
             }
+
+            cache.Add(hash, points);
+        }
+
+        public IEnumerator<Point> GetEnumerator()
+        {
+            return cache.Values.SelectMany(x => x).GetEnumerator();
+        }
+
+        IEnumerator IEnumerable.GetEnumerator()
+        {
+            return GetEnumerator();
         }
     }
     public class AdapterPattern
