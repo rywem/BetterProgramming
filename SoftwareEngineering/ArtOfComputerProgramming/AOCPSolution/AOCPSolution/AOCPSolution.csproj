@@ -35,9 +35,12 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Section1_2\Algorithm_I.cs" />
+    <Compile Include="Section1_2\Algorithm_E.cs" />
+    <Compile Include="MIX\MixMachine.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Section1_2\" />
+    <Folder Include="MIX\" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>
