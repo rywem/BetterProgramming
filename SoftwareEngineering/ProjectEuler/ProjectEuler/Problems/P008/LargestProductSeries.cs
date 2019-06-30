@@ -34,26 +34,29 @@ namespace ProjectEuler.Problems.P008
 			long largest = 0;
 			long numm = 0;
 
-			for (int i = 0; i < p.Length - 12; i++)
-			{
-				numm = int.Parse(p.Substring(i, 1)) *
-					int.Parse(p.Substring(i + 1, 1)) *
-					int.Parse(p.Substring(i + 2, 1)) *
-					int.Parse(p.Substring(i + 3, 1)) *
-					int.Parse(p.Substring(i + 4, 1)) *
-					int.Parse(p.Substring(i + 5, 1)) *
-					int.Parse(p.Substring(i + 6, 1)) *
-					int.Parse(p.Substring(i + 7, 1)) *
-					int.Parse(p.Substring(i + 8, 1)) *
-					int.Parse(p.Substring(i + 9, 1)) *
-					int.Parse(p.Substring(i + 10, 1)) *
-					int.Parse(p.Substring(i + 11, 1)) *
-					int.Parse(p.Substring(i + 12, 1));
 
-				if(numm > largest)
-				{
-					largest = numm;
-				}
+            for (int i = 0; i < p.Length-12; i++)
+            {
+                long number0 = long.Parse(p.Substring(i, 1));
+                long number1 = long.Parse(p.Substring(i + 1, 1));
+                long number2 = long.Parse(p.Substring(i + 2, 1));
+                long number3 = long.Parse(p.Substring(i + 3, 1));
+                long number4 = long.Parse(p.Substring(i + 4, 1));
+                long number5 = long.Parse(p.Substring(i + 5, 1));
+                long number6 = long.Parse(p.Substring(i + 6, 1));
+                long number7 = long.Parse(p.Substring(i + 7, 1));
+                long number8 = long.Parse(p.Substring(i + 8, 1));
+                long number9 = long.Parse(p.Substring(i + 9, 1));
+                long number10 = long.Parse(p.Substring(i + 10, 1));
+                long number11 = long.Parse(p.Substring(i + 11, 1));
+                long number12 = long.Parse(p.Substring(i + 12, 1));
+
+                long product = number0 * number1 * number2 * number3 * number4 
+                    * number5 * number6 * number7 * number8 * number9 * number10
+                    * number11 * number12;
+
+                if (product > largest)
+                    largest = product;
             }
 
 			Console.WriteLine(largest);

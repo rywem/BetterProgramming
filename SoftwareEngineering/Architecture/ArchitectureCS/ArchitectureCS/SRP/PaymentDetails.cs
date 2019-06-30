@@ -1,5 +1,5 @@
 ﻿using System;
-namespace ArchitectureCS.Objects
+namespace ArchitectureCS.SRP
 {
     public class PaymentDetails
     {

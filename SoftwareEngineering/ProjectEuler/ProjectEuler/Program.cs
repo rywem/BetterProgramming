@@ -29,6 +29,7 @@ namespace ProjectEuler
 			LargestProductSeries lps = new LargestProductSeries();
 			lps.Run();
 
+            Console.ReadLine();
 			/*
 			AltSolution a = new AltSolution();
 			a.Run();
