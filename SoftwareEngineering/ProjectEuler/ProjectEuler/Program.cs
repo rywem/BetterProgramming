@@ -26,89 +26,94 @@ namespace ProjectEuler
 	{
 		static void Main(string[] args)
 		{
-			LargestProductSeries lps = new LargestProductSeries();
-			lps.Run();
+            TriangleNumber tn = new TriangleNumber();
+            tn.Run();
+
 
             Console.ReadLine();
-			/*
+
+            //LargestProductSeries lps = new LargestProductSeries();
+            //lps.Run();
+
+            /*
 			AltSolution a = new AltSolution();
 			a.Run();
 			*/
 
-			/*
+            /*
 			LargestPrimeFactor l = new LargestPrimeFactor();
 			l.Run();
 			*/
-			/*
+            /*
 			EvenFibonacci ef = new EvenFibonacci();
 			ef.Run();
 			*/
-			/*
+            /*
 			NameScores ns = new NameScores();
 			ns.Run();
 			*/
-			/*
+            /*
 			FactorialDigitSum f = new FactorialDigitSum();
 			f.Run();
 			*/
-			/*
+            /*
 			PowerDigitSum pds = new PowerDigitSum();
 			pds.Run();
 			*/
 
-			/*
+            /*
 			MaximumSumTriangle mst = new MaximumSumTriangle();
 			mst.Run();*/
 
 
-			/*
+            /*
 			SieveEratosthenes se = new SieveEratosthenes();
 			se.Run();
 			*/
 
 
-			/*
+            /*
 			LatticePattern lp = new LatticePattern();
 			lp.Run();
 			*/
 
-			/*
+            /*
 			TriangleNumber tn = new TriangleNumber();
 			tn.Run();
 			*/
-			/*
+            /*
 			ProductInGrid pg = new ProductInGrid();
 			pg.Run();
 			*/
-			/*
+            /*
 			SumOfPrimes sop = new SumOfPrimes();
 			sop.Run();
 			*/
 
-			/*
+            /*
 			Prime p = new Prime();
 			p.Run();
 			*/
-			/*
+            /*
 			SumSquareDifference ssd = new SumSquareDifference();
 			ssd.Run();
 			*/
 
-			/*
+            /*
 			SmallestMultiple sm = new SmallestMultiple();
 			sm.Run();
 			*/
-			/*
+            /*
 			Palindrome p = new Palindrome();
 			p.Run();
 			*/
 
 
-			/*
+            /*
 			FindNumbers fn = new FindNumbers();
 			fn.Run();
 			*/
 
-		}
+        }
 	}
 }
