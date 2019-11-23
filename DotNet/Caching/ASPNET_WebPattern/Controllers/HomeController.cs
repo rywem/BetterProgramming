@@ -10,8 +10,11 @@ namespace ASPNET_WebPattern.Controllers
     {
         public ActionResult Index()
         {
-            if (WebAppCache.UserContextData == null)
-                WebAppCache.Load();
+            if (WebContextCache.UserContextData == null)
+                WebContextCache.Load();
+
+            if (WebRuntimeCache.UserGetRuntimeData == null)
+                WebRuntimeCache.Load();
 
             return View();
         }

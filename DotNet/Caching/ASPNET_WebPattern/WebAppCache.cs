@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.Caching;
 namespace ASPNET_WebPattern
 {
-    public static class WebAppCache
+    public static class WebContextCache
     {
         public static string UserContextData
         {
@@ -20,7 +20,21 @@ namespace ASPNET_WebPattern
         }
     }
 
-
+    public static class WebRuntimeCache
+    {
+        public static string UserGetRuntimeData
+        {
+            get
+            {
+                return (string)HttpRuntime.Cache.Get("RuntimeData");
+            }
+        }
+        public static void Load()
+        {
+            DateTime utcExpires = DateTime.UtcNow.AddHours(7);
+            HttpRuntime.Cache.Insert($"RuntimeData", new RandomGenerator().GetSimulatedData().ToString(), null, utcExpires, System.Web.Caching.Cache.NoSlidingExpiration);
+        }
+    }    
     public class RandomGenerator
     {
         private Random random = new Random();
