@@ -9,7 +9,8 @@ namespace DataStructures
         {
             //ArraysDS.Run();
             //TwoDArray.Run();
-            LeftRotation.Run();
+            //LeftRotation.Run();
+            SparseArrays.Run();
         }
     }
 }
