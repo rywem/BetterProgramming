@@ -8,7 +8,8 @@ namespace DataStructures
         static void Main(string[] args)
         {
             //ArraysDS.Run();
-            TwoDArray.Run();
+            //TwoDArray.Run();
+            LeftRotation.Run();
         }
     }
 }

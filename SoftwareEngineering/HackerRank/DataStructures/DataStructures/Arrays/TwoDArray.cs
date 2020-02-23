@@ -33,7 +33,7 @@ namespace DataStructures.Arrays
 
         public static int hourglassSum(int[][] arr)
         {
-            int result = 0;
+            int result = -1000;
 
             int maxRow = arr.GetLength(0);
             int maxColumn = arr[0].GetLength(0);
