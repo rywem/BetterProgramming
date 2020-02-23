@@ -7,7 +7,8 @@ namespace DataStructures
     {
         static void Main(string[] args)
         {
-            ArraysDS.Run();
+            //ArraysDS.Run();
+            TwoDArray.Run();
         }
     }
 }

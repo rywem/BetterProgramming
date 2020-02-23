@@ -15,9 +15,9 @@ namespace DataStructures.Arrays
         {
             int[] reversedArray = new int[a.Length];
 
-            for (int i = a.Length; i >= 0; i--)
+            for (int i = a.Length - 1; i >= 0; i--)
             {
-                reversedArray[a.Length - i] = a[i];
+                reversedArray[a.Length - 1 - i] = a[i];
             }
 
             return reversedArray;
