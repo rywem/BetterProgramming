@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Threading;
+
 namespace DataStructures.LinkedList
 {
     public class SinglyLinkedList
@@ -67,19 +69,48 @@ namespace DataStructures.LinkedList
         public SinglyLinkedListNode insertNodeAtPosition(SinglyLinkedListNode head, int data, int position)
         {
             int counter = 0;
+            SinglyLinkedListNode current = head;
 
             while ( true )
             {
+                if (counter == position - 1)
+                {
+                    var newNode = new SinglyLinkedListNode(data);
+                    if ( current.next != null )
+                    {
+                        newNode.next = current.next;
 
-
-
-                if (counter == position)
-                    break;
+                    }
+                    current.next = newNode;
+                    return head;
+                    
+                }
                 else
+                {
+                    current = current.next;
                     counter++;
+                }
             }
-            
+        }
 
+        public SinglyLinkedListNode deleteNode(SinglyLinkedListNode head, int position)
+        {
+            int counter = 0;
+            SinglyLinkedListNode current = head;
+            SinglyLinkedListNode previous = head;
+
+            if (position == 0)
+                return head.next;
+            while ( counter < position )
+            {
+                previous = current;
+                current = head.next;
+                counter++;
+            }
+
+            previous.next = current.next;
+
+            return head;
         }
     }
 }
