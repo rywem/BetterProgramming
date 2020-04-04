@@ -104,13 +104,27 @@ namespace DataStructures.LinkedList
             while ( counter < position )
             {
                 previous = current;
-                current = head.next;
+                current = current.next;
                 counter++;
             }
 
             previous.next = current.next;
 
             return head;
+        }
+
+        public void reversePrint(SinglyLinkedListNode head)
+        {
+            if (head.next == null)
+            {
+                Console.WriteLine(head.data);
+                return;
+            }
+            else
+            {
+                reversePrint(head.next);
+            }
+            Console.WriteLine(head.data);
         }
     }
 }
