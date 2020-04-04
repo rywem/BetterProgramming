@@ -1,5 +1,5 @@
 ﻿using System;
-using DataStructures.Arrays;
+using DataStructures.LinkedList;
 
 namespace DataStructures
 {
@@ -10,7 +10,13 @@ namespace DataStructures
             //ArraysDS.Run();
             //TwoDArray.Run();
             //LeftRotation.Run();
-            SparseArrays.Run();
+            //SparseArrays.Run();
+            SinglyLinkedList singlyLinked = new SinglyLinkedList();
+
+            var node = singlyLinked.insertNodeAtHead(null, 383);
+            PrintLinkedList.PrintList(node);
+            node = singlyLinked.insertNodeAtHead(node, 482);
+            PrintLinkedList.PrintList(node);
         }
     }
 }

@@ -12,5 +12,20 @@ namespace DataStructures.LinkedList
                 current = current.next;
             }
         }
+
+        public static void PrintList(SinglyLinkedListNode head)
+        {
+            Console.Write($"{head.data} -> ");
+            if (head.next != null)
+            {
+                PrintList(head.next);
+            }
+            else
+            {
+                Console.Write("Null");
+                Console.WriteLine();
+            }
+
+        }
     }
 }
