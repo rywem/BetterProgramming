@@ -126,5 +126,45 @@ namespace DataStructures.LinkedList
             }
             Console.WriteLine(head.data);
         }
+
+        public SinglyLinkedListNode reverse(SinglyLinkedListNode head)
+        {
+
+            if (head == null || head.next == null)
+                return head;
+
+            var remaining = reverse(head.next);
+
+            var currentRemaining = remaining;
+            while ( true )
+            {
+                if (currentRemaining.next == null)
+                {
+                    currentRemaining.next = new SinglyLinkedListNode(head.data);
+                    break;
+                }
+                else
+                {
+                    currentRemaining = currentRemaining.next;
+                }
+            }
+            return remaining;
+           
+        }
+
+        public SinglyLinkedListNode reverse2(SinglyLinkedListNode head)
+        {
+
+            if (head == null || head.next == null)
+                return head;
+
+            var result = reverse(head.next);
+
+            head.next.next = head;
+            head.next = null;
+            
+            return result;
+
+        }
     }
 }
