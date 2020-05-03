@@ -23,9 +23,7 @@ namespace MasterTheGarbageCollector
             //Console.WriteLine("WithoutDispose Number of disposed finalized objects: {0}k", FinalizedObjects / 1000);
             //Console.WriteLine("WithoutDispose Average resource lifetime: {0}ms", avgLifetime);
 
-            //DisposePattern.FinalizedObjects = 0;
-            //DisposePattern.TotalTime = 0;
-
+            
             Console.WriteLine();
 
             for ( int i = 0; i < 500000; i++ )
