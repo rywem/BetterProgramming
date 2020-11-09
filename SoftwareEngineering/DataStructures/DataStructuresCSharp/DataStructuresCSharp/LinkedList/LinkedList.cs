@@ -48,5 +48,19 @@ namespace DataStructuresCSharp.LinkedList
             }
             
         }
+
+        public int Count(Node start)
+        {
+            int counter = 0;
+
+            Node temp = start;
+
+            while(temp != null)
+            {
+                counter++;
+                temp = temp.Next;
+            }
+            return counter;
+        }
     }
 }

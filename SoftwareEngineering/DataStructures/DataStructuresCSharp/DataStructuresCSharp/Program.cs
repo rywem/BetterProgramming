@@ -18,7 +18,7 @@ namespace DataStructuresCSharp
             node = list.InsertAtBeginning(node, 0);
             list.InsertAtEnd(node, 2);
             list.Print(node);
-
+            Console.WriteLine(list.Count(node));
         }
     }
 }
