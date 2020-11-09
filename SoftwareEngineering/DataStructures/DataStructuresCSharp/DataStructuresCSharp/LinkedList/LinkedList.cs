@@ -62,5 +62,18 @@ namespace DataStructuresCSharp.LinkedList
             }
             return counter;
         }
+
+        public Node GetNodeAtPosition(Node node, int position)
+        {
+            Node temp;
+            temp = node;
+
+            for ( int i = 0; i < position && temp != null; i++ )
+            {
+                temp = temp.Next;
+            }
+            return temp;
+
+        }
     }
 }
